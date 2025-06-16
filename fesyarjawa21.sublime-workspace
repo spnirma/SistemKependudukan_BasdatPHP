@@ -1,0 +1,2103 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"desainer",
+				"elelang_desainer"
+			],
+			[
+				"gemalindo",
+				"gemalindokreasi"
+			],
+			[
+				"ost_",
+				"ost_company"
+			],
+			[
+				"reg_sess",
+				"reg_sess_id_registrar"
+			],
+			[
+				"repl",
+				"str_replace"
+			],
+			[
+				"send_mail",
+				"send_mail_interview"
+			],
+			[
+				"rf_reg",
+				"rf_reg_module_choice"
+			],
+			[
+				"regpre",
+				"regpreregistration"
+			],
+			[
+				"str_re",
+				"str_replace"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 7720,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/home.php",
+			"settings":
+			{
+				"buffer_size": 36837,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/beranda.php",
+			"settings":
+			{
+				"buffer_size": 58348,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/admin/user.php",
+			"settings":
+			{
+				"buffer_size": 52698,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/fesyarrace.php",
+			"settings":
+			{
+				"buffer_size": 23502,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/stakeholders.php",
+			"settings":
+			{
+				"buffer_size": 23515,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/news.php",
+			"settings":
+			{
+				"buffer_size": 27876,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/layout.php",
+			"settings":
+			{
+				"buffer_size": 27093,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/umkm/home.php",
+			"settings":
+			{
+				"buffer_size": 17090,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/timeschedule.php",
+			"settings":
+			{
+				"buffer_size": 24058,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/program_ve_wide.php",
+			"settings":
+			{
+				"buffer_size": 6335,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/schedule_ve.php",
+			"settings":
+			{
+				"buffer_size": 37006,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/welcome_bu.php",
+			"settings":
+			{
+				"buffer_size": 34799,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/welcomex.php",
+			"settings":
+			{
+				"buffer_size": 58246,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/schedule_bm_ve.php",
+			"settings":
+			{
+				"buffer_size": 37912,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/schedule_bm_ve_1tomany.php",
+			"settings":
+			{
+				"buffer_size": 28762,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/publikasi.php",
+			"settings":
+			{
+				"buffer_size": 24268,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/ejavec.php",
+			"settings":
+			{
+				"buffer_size": 26708,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\n\nif (!defined('BASEPATH'))\n    exit('No direct script access allowed');\n\nclass Home extends CI_Controller {\n\n    public function __construct()\n    {\n        parent::__construct();\n        $this->load->model('home_m');\n        $this->load->model('user_m');\n        $this->load->model('page_m');\n        $this->load->helper('app_helper');\n        $this->load->model('menu_grid_m');\n        $this->load->model('home_ui2_m');\n        $this->load->model('search_m');\n        $this->load->model('love_m');\n        $this->load->model('wholesale_m');\n        $this->load->model('kategori_m');\n        $this->load->model('whitelabel_m');\n        $this->load->model('mobo_m');\n        $this->load->library('user_agent');\n    }\n\n\n\n    public function index()\n    {\n// redirect ('/comingsoon');die;\n        $data = array();\n        $data['is_mobile'] = $this->agent->is_mobile();\n        $data['title'] = $this->agent->is_mobile();\n\n        // Action Log : Hits\n        $actionLog = new Cipika\\Common\\ActionLog();\n        $visitorid=0; $handleby=0;\n        // if ($data['data_umkm'][0]->id_store<>'') $handleby=(int)$data['data_umkm'][0]->id_store;\n        // echo $_SERVER['HTTP_REFERER'].' ';die;\n        if($this->session->userdata('member')) { $visitorid=$this->session->userdata('member')->id_user;  }\n        $handleby=0;\n        if (isset($_SERVER['HTTP_REFERER'])) {\n            $actionLog->save('hits', 1, 'hits', 'virtual tour', $visitorid, $handleby,$this->agent->is_mobile());\n        }\n\n$data['login']=''; //myEncrypt('pano',$visitorid);\n$data['id'] = myEncrypt('bbivt',$visitorid);\n$data['coba']='';\n//echo 'a'.$visitorid.myEncrypt('imotion',$visitorid);;die;\n\n            // echo $this->load->render('frontend/virtual_tour/layout',$data); //home\n\n        // if($this->session->userdata('member'))\n            echo $this->load->render('frontend/virtual_tour/layout',$data); //home\n        // else \n        //     echo $this->load->render('frontend/login',$data); \n\ndie;\n\n\n        if($this->session->userdata('member')){\n//        redirect ('http://cipika.localhost/mobo/redeem');die;\n            redirect (base_url().'mobo/redeem');die;\n\n        }\n        \n        $this->session->unset_userdata('whitelabel');\n        $this->session->unset_userdata('whitelabel_cipika_ident');\n        $this->session->unset_userdata('whitelabel_partner');\n        $this->session->unset_userdata('persib');\n        $this->session->unset_userdata('persib_gerai');\n        $this->session->unset_userdata('persib_gerai_user');\n\n        $this->session->set_userdata('whitelabel', 'True');\n        $this->session->set_userdata('whitelabel_cipika_ident', FALSE);\n        $this->session->set_userdata('whitelabel_partner', 'MoBo');\n\n// echo '<pre>';print_r($this->session->userdata('mobo_outlet'));echo '</pre>';\n// if ($this->session->userdata('mobo_outlet')=='') {\n//     echo 'takdaa';\n// }\n// die;\n\n        $mobo_check = $this->mobo_m->check_mobo_session(FALSE,FALSE); //must mobo, must login\n//print_r($mobo_check);die;\n        if ($mobo_check->status==0 ) { // && $mobo_check->ses_mobo=='ada'\n             $data['err_message']=$mobo_check->error;\n             echo $this->load->render('frontend/mobo/error',$data);\n             die;\n        //} else if ($mobo_check->status==2 ) { // && $mobo_check->ses_mobo=='ada'\n        //     redirect(base_url('mobo/outletmap/?ury3784658ruwerye='.$mobo_check->mobo_outletmap_key));\n        }\n\n        $data = array();\n\n        if (isset($_GET['s'])) {\n            $data['by_search'] = $_GET['s'];\n        } else {\n            $data['by_search'] = '';\n        }\n        if (isset($_GET['cat'])) {\n            $data['by_category'] = $_GET['cat'];\n        } else {\n            $data['by_category'] = '';\n        }\n        if (isset($_GET['loc'])) {\n            $data['by_location'] = $_GET['loc'];\n        } else {\n            $data['by_location'] = '';\n        }\n        if (isset($_GET['pr'])) {\n            $data['by_price'] = $_GET['pr'];\n        } else {\n            $data['by_price'] = '';\n        }\n        if (isset($_GET['tag'])) {\n            $data['by_tag'] = $_GET['tag'];\n        } else {\n            $data['by_tag'] = '';\n        }\n        if (isset($_GET['sort'])) {\n            $data['by_sort'] = $_GET['sort'];\n        } else {\n            $data['by_sort'] = '';\n        }\n\n        if (isset($_GET['s'])) {\n            $data['by_search'] = $_GET['s'];\n        } else {\n            $data['by_search'] = '';\n        }\n\n        $filter = 1;\n\n        if (isset($_GET['filter'])) {\n            $filter = $_GET['filter'];\n        }\n        \n        if ($filter == 1) {\n            $limit = $data['dataPerhalaman'] = 20;\n        } else {\n            $limit = $data['dataPerhalaman'] = 20;\n        }\n        \n        if($this->config->item('layout')=='ui2'){\n            if (isset($_GET['page'])) {\n                $data['hal'] = $_GET['page'];\n                $offset = $limit * ($_GET['page'] - 1);\n            } else {\n                $data['hal'] = 1;\n                $offset = 0;\n            }\n        } else {\n            if (isset($_GET['sc'])) {\n                $offset = $limit * ($_GET['sc'] - 1);\n            } else {\n                $offset = 0;\n            }\n        }\n        \n        if($this->input->post('sort_submit')==1){\n            $params = $_GET;\n            $params['sort'] = $this->input->post('sort');\n            $query = http_build_query($params);\n            redirect(base_url().'food/?'.$query);\n        }\n        \n        if ($this->input->post('pr_submit') == 1) {\n            $params = $_GET;\n            $params['pr'] = $this->input->post('pr');\n            $query = http_build_query($params);\n            redirect(base_url().'food/?'.$query);\n        }\n        \n        $arrayidprod = array('0');\n        if($this->config->item('layout')=='ui2'){\n            $data['produk'] = $this->home_ui2_m->get_produk_mobo('',$data['by_search'],$data['by_category'],$data['by_price'],$data['by_sort'],$data['by_location'],$limit,$offset);\n        } else {\n            $data['produk'] = $this->home_m->get_produk($limit,$offset);\n        }\n        \n        $diskon_kalkulator_promo_diskon = new Cipika\\Promo\\PromoDiskonCalculator($this->db,$this->session);\n        \n        $diskon_kalkulator_daily_deals = new Cipika\\Promo\\PromoDailyDealsCalculator($this->db,$this->session);\n        \n        $produk_price_calculator = new Cipika\\Promo\\ProdukPriceCalculator;\n        $produk_price_calculator->addPriceListDiskonKalkulator($diskon_kalkulator_promo_diskon);\n        $produk_price_calculator->addPriceListDiskonKalkulator($diskon_kalkulator_daily_deals);\n        \n        $data['produk_diskon'] = $produk_price_calculator->getPriceList($data['produk']);\n        if($this->config->item('layout')=='ui2'){\n            $data['jumData'] = $this->home_ui2_m->count_produk_mobo('',$data['by_search'],$data['by_category'],$data['by_price'],$data['by_sort'],$data['by_location']);\n            if($this->getSession()->get('member')) {\n                $id_user = $this->getSession()->get('member')->id_user;\n            } else {\n                $id_user = null;\n            }\n            $data['love'] = $this->love_m->getLoveByProductArray($id_user,$data['produk']);\n            $data['primary_photo'] = $this->home_ui2_m->getPrimaryPhotoByProductArray($data['produk']);\n            \n        }\n        \n        $data['page'] = $this->page_m->get_list_page();\n\n        if($this->config->item('layout')=='ui2'){\n            if ($filter == 1) {\n                if($this->config->item('layout_ui2.1')=='active'){\n                    //echo $this->load->render('frontend/channel_filter',$data);\n                    echo $this->load->render('frontend/mobo/home',$data);\n                } else {\n                    //$this->load->view('publik/ui2/category_filter_v',$data);\n                }\n            } else {\n                if($this->config->item('layout_ui2.1')=='active'){\n                    //echo $this->load->render('frontend/channel',$data);\n                } else {\n                    //$this->load->view('publik/ui2/category_no_filter_v',$data);\n                }\n            }\n        } else {\n            //$this->load->view('publik/home2_v', $data);\n        }\n        \n    }\n\n    public function fesyarsby2019()\n    {\n        // die;\n        \n        echo $this->load->render('frontend/virtual/home_fesyarsby19');\n\n    }\n\n}\n\n/* End of file home.php */\n/* Location: ./application/controllers/home.php */\n",
+			"file": "application/controllers/beranda/home.php",
+			"file_size": 8700,
+			"file_write_time": 132752923901450258,
+			"settings":
+			{
+				"buffer_size": 8463,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/welcome/home.php",
+			"settings":
+			{
+				"buffer_size": 8525,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/admin/acara.php",
+			"settings":
+			{
+				"buffer_size": 12191,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/ajax.php",
+			"settings":
+			{
+				"buffer_size": 74709,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/infografis.php",
+			"settings":
+			{
+				"buffer_size": 24274,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/admin/peserta.php",
+			"settings":
+			{
+				"buffer_size": 8486,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Web/Dyacomm/Generasibaru/application/controllers/cronjob_genbi20.php",
+			"settings":
+			{
+				"buffer_size": 191839,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/umkm/hoi.php",
+			"settings":
+			{
+				"buffer_size": 16603,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "system/core/Controller.php",
+			"settings":
+			{
+				"buffer_size": 3824,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/auth.php",
+			"settings":
+			{
+				"buffer_size": 108671,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/merchant_ve.php",
+			"settings":
+			{
+				"buffer_size": 102344,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/myproduct_ve.php",
+			"settings":
+			{
+				"buffer_size": 73039,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/main.php",
+			"settings":
+			{
+				"buffer_size": 58638,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/daftar_pemenang.php",
+			"settings":
+			{
+				"buffer_size": 23519,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/about.php",
+			"settings":
+			{
+				"buffer_size": 23493,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/config/routes.php",
+			"settings":
+			{
+				"buffer_size": 5367,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/MerchantStoreController.php",
+			"settings":
+			{
+				"buffer_size": 22781,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/quiz_ve.php",
+			"settings":
+			{
+				"buffer_size": 13130,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/user_ve.php",
+			"settings":
+			{
+				"buffer_size": 49351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/controllers/schedule_ziswaf_ve.php",
+			"settings":
+			{
+				"buffer_size": 30751,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/MerchantStoreControllerFlat.php",
+			"settings":
+			{
+				"buffer_size": 25214,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/admin/produk.php",
+			"settings":
+			{
+				"buffer_size": 160608,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/virtual_expo/home.php",
+			"settings":
+			{
+				"buffer_size": 8909,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Web/Dyacomm/fesyarjawa2021/application/views/plates/frontend/quiz_ve/home.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/about_ve.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/schedule_commerce_ve.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/ajax_ve.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/config/development/database.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/virtual_showcase/home.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/beranda.php",
+		"/D/Web/Dyacomm/fesyarjawa2021/application/controllers/welcome.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/MerchantStoreController.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/elelang.php",
+		"/D/Web/Dyacomm/imotion/application/models/myproduct_m.php",
+		"/D/Web/Dyacomm/imotion/application/models/ajax_m.php",
+		"/D/Web/Dyacomm/imotion/application/models/auth_m.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/MerchantStoreControllerFlat.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/virtual_tour.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/user_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/home.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/about_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/about_ve_flat.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/login_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/auth.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/socialcallback.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/stakeholders_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/guidance_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/admin/payment.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/admin/peserta.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/deteksi.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/schedule_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/admin/acara.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/product.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/layout_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/channel_ve/home.php",
+		"/D/Web/EOC2018/application/modules/drawing/controllers/drawing.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/virtual_iimotion/tes.php",
+		"/D/Web/Dyacomm/imotion/application/libraries/pluploadhandler.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/merchant_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/myproduct_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/ajax_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/news_ve.php",
+		"/D/Web/Dyacomm/imotion/application/views/plates/frontend/regcli/custom_app_14/contract_invitation.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/program_ve_wide.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/ajax.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/home_regbiz.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/cart.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/virtual_iimotion/home.php",
+		"/D/Web/Dyacomm/JelajahVirtual/application/controllers/main.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/ebooklet_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/ekatalog_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/gallery_ve.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/daftar_peserta.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/admin/banner.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/comingsoon.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/welcome.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/main.php",
+		"/D/Web/Dyacomm/imotion/application/controllers/index.html",
+		"/D/Web/Dyacomm/imotion/application/controllers/virtual_imotion/home.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_disrupto19.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz.php",
+		"/D/Web/regbiz/application/controllers/cronjob_chse20.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/D/Web/regbiz/application/controllers/regcli_customapp_84.php",
+		"/D/Web/regbiz/application/controllers/regbzmve_appointment.php",
+		"/D/Web/regbiz/application/controllers/ion_auth.php",
+		"/D/Web/regbiz/application/controllers/admin/user.php",
+		"/D/Web/regbiz/application/controllers/admin/searching.php",
+		"/D/Web/regbiz/application/controllers/regcli_customapp_82.php",
+		"/D/Web/regbiz/application/controllers/regbzmve.php",
+		"/D/Web/regbiz/application/controllers/auth.php",
+		"/D/Web/regbiz/application/controllers/lib_regbzmve_brilian19",
+		"/D/Web/regbiz/application/controllers/lib_regbzmve_brilian19.php",
+		"/D/Web/regbiz/application/controllers/regbzmve_browse",
+		"/D/Web/regbiz/application/controllers/admin/settlement.php",
+		"/D/Web/regbiz/application/controllers/api/grabexpress.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_bbw20jkt.php",
+		"/D/Web/regbiz/application/controllers/regcli_customapp_66.php",
+		"/D/Web/EOC2018/application/modules/registration/controllers/participant_ptbi19_dashboard.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_ptbi2019.php",
+		"/D/Web/EOC2018/application/modules/registration/views/participant_apq19_peserta/participant_preview2.php",
+		"/D/Web/regbiz/application/controllers/regcli_customapp_58",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_eticket_fidc2019.php",
+		"/D/Web/SML17/application/modules/wheel_topedmedan/views/index.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_bbwsby18.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regbiz_bbwjkt19.php",
+		"/D/Web/regbiz/application/controllers/checkmyqr.php",
+		"/D/Web/regbiz/application/controllers/regprecart.php",
+		"/D/Web/regbiz/application/controllers/regprepayment.php",
+		"/D/Web/regbiz/application/controllers/admin/neworder.php",
+		"/D/Web/regbiz/application/controllers/api/bcaklikpay.php",
+		"/D/Web/onsite.connectar/application/config/config.php",
+		"/D/Web/onsite.connectar/application/helpers/datatables_helper.php",
+		"/D/Web/regbiz/application/config/development/constants.php",
+		"/D/Web/regbiz/application/controllers/cart.php",
+		"/D/Web/regbiz/application/controllers/regprem",
+		"/D/Web/regost/application/modules/absensi_jkt/controllers/scan_barcode.php",
+		"/D/Web/regbiz/application/controllers/api/indomaret.php",
+		"/D/Web/regbiz/application/views/plates/frontend/regcli/custom_app_20/list_registrar.php",
+		"/D/Web/regost/application/modules/absensi/controllers/master.php",
+		"/D/Web/regbiz/application/controllers/oopss.php",
+		"/D/Web/regbiz/application/controllers/cronjob_regcli.php",
+		"/D/Web/regbiz/application/controllers/api/mobo_redeem.php",
+		"/D/Web/regbiz/application/controllers/cronjob_mobo.php",
+		"/D/Web/regbiz/application/controllers/regclisetting.php",
+		"/D/Web/regbiz/application/controllers/regostlogin.php",
+		"/D/Web/regbiz/application/controllers/regclireg.php",
+		"/D/Web/regbiz/application/controllers/regcli.php",
+		"/D/Web/regbiz/application/controllers/regclilogin.php",
+		"/D/Web/regost/application/modules/registration/views/cetak/badge.php",
+		"/D/Web/regost/application/modules/registration/views/cetak/16/badge_crew.php",
+		"/D/Web/regbiz/composer.json",
+		"/D/Web/traya/i3expo/visitor_send_mail.php",
+		"/D/Web/regbiz/application/controllers/code/bar.php",
+		"/D/Web/rab/application/config/database.php",
+		"/D/Web/rab/application/config/config.php",
+		"/D/Web/rab/application/modules/dashboard/controllers/home.php",
+		"/D/Web/regbiz/application/config/development/config.php",
+		"/D/Web/regbiz/application/controllers/canvasser.php",
+		"/D/Web/regbiz/application/controllers/regpremain.php",
+		"/D/Web/regbiz/application/controllers/home_regbiz.php",
+		"/D/Web/regbiz/application/controllers/regpreregistration.php",
+		"/D/Web/regbiz/application/controllers/regpreconfirm.php",
+		"/D/Web/regbiz/application/controllers/regosthm.php",
+		"/D/Web/regbiz/application/controllers/home.php",
+		"/D/Web/regbiz/application/controllers/persib/form_pendaftaran.php",
+		"/D/Web/regbiz/front_prod.php",
+		"/D/Web/levelUp/BBW/bbw1/database/seeds/DatabaseSeeder.php",
+		"/D/Web/regbiz/application/config/testing/constants.php",
+		"/D/Web/regbiz/index.php",
+		"/D/Web/cipika_store/system/libraries/User_agent.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"send_mail_sertifikatgenbi_susulan",
+			"lc_mail",
+			"send_mail_sertifikat",
+			"log",
+			"numr",
+			"num_r",
+			"ion answer",
+			"e_bbi21_country",
+			"id_user",
+			"replace",
+			"visitorcounter",
+			"host",
+			"strpos",
+			"$this->db->insert(\"tbl_visitor_log\"",
+			"bzmapp_tipe",
+			"GMT+7",
+			"$this->visitor_counter()",
+			"visitor",
+			"count",
+			"segment",
+			"'store'",
+			"view",
+			"viewed",
+			"                $tanggal_list[\"2021-09-27\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\",\"15:30\",\"16:00\"];\n                $tanggal_list[\"2021-09-28\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\",\"15:30\",\"16:00\"];\n                $tanggal_list[\"2021-09-29\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\",\"15:30\",\"16:00\"];\n                $tanggal_list[\"2021-09-30\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\",\"15:30\",\"16:00\"];\n                $tanggal_list[\"2021-10-01\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\",\"15:30\",\"16:00\"];\n                $tanggal_list[\"2021-10-02\"] = [\"09:00\",\"09:30\",\"10:00\",\"10:30\",\"11:00\",\"13:30\",\"14:00\",\"14:30\"];\n",
+			"ion det",
+			"ion human_date",
+			"human_date",
+			"ion ed",
+			"biodat",
+			"desk",
+			"data",
+			"ion produk_verified",
+			"e_bbi21_country",
+			"produk",
+			"'store'",
+			"store",
+			"ion up",
+			"ionup",
+			"ajax_ve",
+			"ion up",
+			"login",
+			"/admin",
+			"isexist",
+			"id_level",
+			"isexist",
+			"myEncrypt",
+			"welc",
+			"visitor_counter",
+			"strtotime",
+			"BSI",
+			"100000",
+			"ajaxsubmitbid",
+			"or",
+			"'or",
+			"'or'",
+			"or'",
+			"'or",
+			"or",
+			"'or'",
+			"or",
+			"date",
+			"vFile",
+			"ajaxlatesbid",
+			"elelang_detail",
+			"'en'",
+			"$db_event['start_date']",
+			"$db_event['end_date']",
+			"'coun",
+			"country",
+			"fore",
+			"country",
+			"redi",
+			"redir",
+			"nama_kabupaten",
+			"nama_kab",
+			"$visitor",
+			"'visi",
+			"ref",
+			"die;",
+			"store/",
+			"myDecrypt",
+			"ion lo",
+			"cipika",
+			"title",
+			"'store",
+			"store",
+			"des",
+			"main",
+			"content_source",
+			"banner_web",
+			"'title'",
+			"title",
+			"ion des",
+			"'en'",
+			"isexist",
+			"'en'",
+			"$user",
+			"login_chck",
+			"login_bzmve",
+			"sosmed",
+			"ion login",
+			"ion l",
+			"2020-10-05",
+			"check_password",
+			"passconf",
+			"diisi",
+			"data_b",
+			"ion se",
+			"'store'",
+			"'en'",
+			"under cons.",
+			"$hadiah",
+			"<?",
+			"e_jambore20_tb_registration",
+			"visitor_counter",
+			"banner_web",
+			"banner",
+			"user_login",
+			"$this->session->userdata('member')",
+			"visi",
+			"auth",
+			"cek_hak_akses",
+			"business_matching",
+			"ion bus",
+			"ion det",
+			"cache_home_view_id",
+			"cache_home_view",
+			"$cache_home_view"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$v->start_date",
+			"$v->end_date",
+			"e_kreditplus21_tb_registration",
+			"_84",
+			"_82",
+			"e_ptbi20_tb_registrasi",
+			"_66",
+			"_65",
+			"e_brilian_tb_registrasi",
+			"e_royalcanin19_tb_registration",
+			"_62",
+			"e_biseminar19_tb_registration",
+			"_58",
+			"regcli_customapp_58",
+			"e_isef19_tb_peserta",
+			"mks19",
+			"regcli_m_custom36",
+			"_36",
+			"z_disrupto_registrar_19",
+			"regcli_customapp_55",
+			"custom_app_55",
+			"regcli_m_custom55",
+			"blp19",
+			"m38",
+			"_38",
+			"_sby19",
+			"_37",
+			"_sby19",
+			"custom_app_37",
+			"regcli_m_custom37",
+			"z_bbw_jkt_registrar_mdn19",
+			"regcli_customapp_39",
+			"custom_app_39",
+			"regcli_m_custom39",
+			"z_bbw_jkt_registrar_mdn19",
+			"_mdn19",
+			"$idevent = 52",
+			"Jogjakarta",
+			"z_bbw_registrar_jog19",
+			"regcli_m_custom35",
+			"custom_app_35",
+			"regcli_customapp_32",
+			"z_bbw_registrar_bdg19",
+			"regcli_m_custom32",
+			"custom_app_32",
+			"z_bbw_registrar_bdg19",
+			"z_bbw_registrar_jkt19",
+			"custom_app_23",
+			"regcli_customapp_23",
+			"regcli_m_custom23",
+			"regd_data_ctg"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								904,
+								913
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/controllers/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 36837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4769,
+								4769
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1568.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/controllers/beranda.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 58348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 86.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/controllers/admin/user.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 52698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37012,
+								37012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9082.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 37,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "application/controllers/fesyarrace.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3736,
+								3736
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 741.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/controllers/stakeholders.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3673,
+								3673
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 624.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "application/controllers/news.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27876,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4001,
+								3801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "application/controllers/layout.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3605,
+								3785
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "application/controllers/umkm/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17090,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12244,
+								12244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3848.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "application/controllers/timeschedule.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4150,
+								4326
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "application/controllers/program_ve_wide.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3442,
+								3459
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 728.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "application/controllers/schedule_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10503,
+								9970
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2847.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "application/controllers/welcome_bu.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1167,
+								1202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 34,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "application/controllers/welcomex.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 58246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "application/controllers/schedule_bm_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37912,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5786,
+								5786
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1599.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "application/controllers/schedule_bm_ve_1tomany.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "application/controllers/publikasi.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3788,
+								3797
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 962.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "application/controllers/ejavec.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5806,
+								5806
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1521.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "application/controllers/beranda/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1745,
+								1745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "application/controllers/welcome/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8525,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1498,
+								1498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 346.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "application/controllers/admin/acara.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3341,
+								3341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1308.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "application/controllers/ajax.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52786,
+								52786
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 15262.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "application/controllers/infografis.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2866,
+								2866
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "application/controllers/admin/peserta.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6927,
+								6927
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2127.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/D/Web/Dyacomm/Generasibaru/application/controllers/cronjob_genbi20.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 191839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								822,
+								822
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "application/controllers/umkm/hoi.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11486,
+								11683
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3705.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "system/core/Controller.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3140,
+								3140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1152.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "application/controllers/auth.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 108671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1414,
+								1414
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 151.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "application/controllers/merchant_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 102344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12313,
+								12313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3206.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "application/controllers/myproduct_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7434,
+								7440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 463.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "application/controllers/main.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 58638,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2477,
+								2492
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "application/controllers/daftar_pemenang.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3845,
+								3860
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 663.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "application/controllers/about.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								583,
+								583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "application/config/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3270,
+								3270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 723.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "application/controllers/MerchantStoreController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18898,
+								18898
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4688.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "application/controllers/quiz_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11894,
+								11692
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3583.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "application/controllers/user_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31758,
+								31758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 37,
+					"file": "application/controllers/schedule_ziswaf_ve.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12631,
+								12634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3518.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "application/controllers/MerchantStoreControllerFlat.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25214,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22419,
+								22434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5711.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "application/controllers/admin/produk.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 160608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14231,
+								14464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3726.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 40,
+					"file": "application/controllers/virtual_expo/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2206,
+								2206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 455.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "fesyarjawa21.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

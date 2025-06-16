@@ -1,0 +1,103 @@
+@font-face {
+	font-family:'FuturaStd-Heavy';
+	src: url('../fonts/FuturaStd-Heavy_gdi.eot');
+	src: url('../fonts/FuturaStd-Heavy_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaStd-Heavy_gdi.woff') format('woff'),
+		url('../fonts/FuturaStd-Heavy_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaStd-Heavy_gdi.svg#FuturaStd-Heavy') format('svg');
+	font-weight: 650;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'FuturaStd-Bold';
+	src: url('../fonts/FuturaStd-Bold_gdi.eot');
+	src: url('../fonts/FuturaStd-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaStd-Bold_gdi.woff') format('woff'),
+		url('../fonts/FuturaStd-Bold_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaStd-Bold_gdi.svg#FuturaStd-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'FuturaStd-Book';
+	src: url('../fonts/FuturaStd-Book_gdi.eot');
+	src: url('../fonts/FuturaStd-Book_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaStd-Book_gdi.woff') format('woff'),
+		url('../fonts/FuturaStd-Book_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaStd-Book_gdi.svg#FuturaStd-Book') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'FuturaStd-Light';
+	src: url('../fonts/FuturaStd-Light_gdi.eot');
+	src: url('../fonts/FuturaStd-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaStd-Light_gdi.woff') format('woff'),
+		url('../fonts/FuturaStd-Light_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaStd-Light_gdi.svg#FuturaStd-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'FuturaStd-Medium';
+	src: url('../fonts/FuturaStd-Medium_gdi.eot');
+	src: url('../fonts/FuturaStd-Medium_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/FuturaStd-Medium_gdi.woff') format('woff'),
+		url('../fonts/FuturaStd-Medium_gdi.ttf') format('truetype'),
+		url('../fonts/FuturaStd-Medium_gdi.svg#FuturaStd-Medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+@font-face {
+	font-family:'ooredoo-Bold';
+	src: url('../fonts/ooredoo-Bold_gdi.eot');
+	src: url('../fonts/ooredoo-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ooredoo-Bold_gdi.woff') format('woff'),
+		url('../fonts/ooredoo-Bold_gdi.ttf') format('truetype'),
+		url('../fonts/ooredoo-Bold_gdi.svg#ooredoo-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+
+@font-face {
+	font-family:'ooredoo-Light';
+	src: url('../fonts/ooredoo-Light_gdi.eot');
+	src: url('../fonts/ooredoo-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ooredoo-Light_gdi.woff') format('woff'),
+		url('../fonts/ooredoo-Light_gdi.ttf') format('truetype'),
+		url('../fonts/ooredoo-Light_gdi.svg#ooredoo-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}
+
+@font-face {
+	font-family:'ooredoo-Regular';
+	src: url('../fonts/ooredoo-Regular_gdi.eot');
+	src: url('../fonts/ooredoo-Regular_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ooredoo-Regular_gdi.woff') format('woff'),
+		url('../fonts/ooredoo-Regular_gdi.ttf') format('truetype'),
+		url('../fonts/ooredoo-Regular_gdi.svg#ooredoo-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2212;
+}

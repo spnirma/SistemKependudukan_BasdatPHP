@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Cipika" default="build">
+    <property name="php" value="php" />
+
+    <target name="build"
+        depends="prepare,lint,phpcs,phpcb" />
+
+    <target name="clean" description="Cleanup build artifacts">
+        <delete dir="${basedir}/build/logs" />
+        <delete dir="${basedir}/build/code-browser" />
+        <delete dir="${basedir}/build/phpdocs" />
+    </target>
+
+    <target name="prepare" depends="clean" description="Prepare for build">
+        <mkdir dir="${basedir}/build/logs" />
+        <mkdir dir="${basedir}/build/code-browser" />
+        <mkdir dir="${basedir}/build/phpdocs" />
+    </target>
+
+    <target name="lint">
+        <apply executable="${php}" failonerror="true">
+            <arg value="-l" />
+            <fileset dir="${basedir}/src">
+                <include name="**/*.php" />
+            </fileset>
+        </apply> 
+    </target>
+
+    <target name="phpunit" description="Run unit tests with PHPUnit">
+        <exec executable="phpunit" failonerror="true">
+            <arg value="--coverage-clover=${basedir}/build/coverage.clover" />
+        </exec>
+    </target>
+
+    <target name="phpcs" description="Run coding style analysis PHP Code Sniffer">
+        <exec executable="${basedir}/vendor/bin/phpcs">
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
+            <arg value="--standard=PSR2" />
+            <arg value="--extensions=php" />
+            <arg path="${basedir}/src" />
+        </exec>
+    </target>
+    
+    <target name="phpcb">
+        <exec executable="${basedir}/vendor/bin/phpcb">
+            <arg value="--log" />
+            <arg path="${basedir}/build/logs" />
+            <arg value="--source" />
+            <arg path="${basedir}/src" />
+            <arg value="--output" />
+            <arg path="${basedir}/build/code-browser" />
+        </exec>
+    </target>
+    
+    <target name="phpdoc" description="The world standard auto-documentation tool for PHP">
+        <exec executable="${basedir}/vendor/bin/phpdoc">
+            <arg value="-d" />
+            <arg path="${basedir}/src" />
+            <arg value="-t" />
+            <arg path="${basedir}/build/phpdocs" />
+            <arg value="--template" />
+            <arg path="${basedir}/vendor/phpdocumentor/templates/responsive-twig" />
+        </exec>
+    </target>    
+
+    <target name="behat" description="Run behat test">
+        <exec executable="${basedir}/vendor/bin/behat" failonerror="true">
+        </exec>
+    </target>
+
+</project>

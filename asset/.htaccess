@@ -1,0 +1,8 @@
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files pict.php>
+    Order Allow,Deny
+    Allow from all
+</Files>

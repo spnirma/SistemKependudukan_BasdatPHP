@@ -1,0 +1,302 @@
+<?=$this->load->view('publik/ui2/header')?>
+<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+<section class="main">
+
+            <div class="featured-list container">
+
+            <header class="content-head container">
+                <div class="boxhead">
+                   <div class="row">
+                       <div class="col-xs-3">
+                           Member Area
+                       </div>
+                       <div class="col-xs-9">
+                       </div>
+                   </div> 
+                </div>
+            </header>
+
+            <div class="category-list container">
+                
+                <div class="row">
+                    <?php $this->load->view('publik/ui2/sidebar_member_v')?>
+                    
+                    <div class="col-xs-9">
+                        <div class="row">
+                            <div class="aboutbox-item aboutbox-item-static">
+                            <h3><span>Profilku</span></h3>
+                            <hr>
+                            <?php
+                            if ($success != '')
+                            {
+                                ?>
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <?=$success?>
+                                </div>
+                            <?php } ?>
+                            <?php
+                            if ($error != '')
+                            {
+                                ?>
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <?=$error;?>
+                                </div>
+                            <?php } ?>
+                        
+                            
+                                <form class="form-horizontal" method="post" action="<?=base_url();?>user/profile/?<?=urlencode($continue);?>" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label"><a href="#" id="change_pp">Ganti Logo</a></label>
+                                    <div class="col-lg-6" id="img_pp" style="width:150px; height:150px;">
+                                        <img id="previewHolder" src="<?=($data->image)? base_url().'asset/upload/profil/'.$data->image:base_url().'asset/img/no-avatar-single.png'; ?>">
+                                    </div>
+                                    <input type="file" id="filePhoto" class="hidden" name="user_image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Nama Tampilan<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input value="<?= htmlspecialchars(set_value('username' ,$data->username)) ;?>" name="username" type="text" class="form-control" id="username" placeholder="Cipika Store">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Nama Depan<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input value="<?= htmlspecialchars(set_value('firstname' ,$data->firstname)) ;?>" name="firstname" type="text" class="form-control" id="firstname" placeholder="George">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Nama Belakang<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input value="<?= htmlspecialchars(set_value('lastname' ,$data->lastname)) ;?>" name="lastname" type="text" class="form-control" id="lastname" placeholder="Walker">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Tanggal Lahir<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input value="<?=strftime("%d-%m-%Y",strtotime(substr(set_value('birthdate' ,$data->birthdate),0,10)));?>" name="birthdate" type="text" class="form-control" id="tgl_lahir" placeholder="dd-mm-yyyy">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Gender<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input type="radio" value="man" name="gender" <?=(set_value('gender' ,$data->gender)=='man')?'checked':'';?>> Pria
+                                        <input type="radio" value="woman" name="gender" <?=(set_value('gender' ,$data->gender)=='woman')?'checked':'';?>> Wanita
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Alamat<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <textarea name="alamat" class="form-control" id="alamat" placeholder=""><?= htmlspecialchars(set_value('alamat' ,$data->alamat)) ;?></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Telepon<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input onkeypress="return isNumberKey(event)" value="<?= htmlspecialchars(set_value('hp' ,$data->telpon)) ;?>" name="telpon" type="text" class="form-control" id="telpon" placeholder="0312281672">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-lg-2 control-label">Hp<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <input onkeypress="return isNumberKey(event)" value="<?= htmlspecialchars(set_value('hp' ,$data->hp)) ;?>" name="hp" type="text" class="form-control" id="hp" placeholder="085711234560">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user" class="col-lg-2 control-label">Lokasi<span class="icon-required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <select class="form-control" name="id_propinsi" id="propinsi">
+                                            <option value=''>-- Pilih Propinsi --</option>
+                                            <?php
+                                            
+                                            $kecamatan = (set_value('kecamatan' ,$data->id_kecamatan));
+                                            $kabupaten = (set_value('id_kabupaten' ,$data->id_kabupaten));
+                                            
+                                            if($kecamatan){
+                                            $lokasi = $this->lib_lokasi->get_lokasi($kecamatan);
+                                            }else{
+                                            $lokasi = $this->lib_lokasi->get_lokasi_by_kabupaten($kabupaten);   
+                                            }
+                                            if (!empty($propinsi))
+                                            {
+                                                foreach ($propinsi as $row)
+                                                {
+                                                    $selected = ($lokasi->id_propinsi == $row->id_propinsi) ? 'selected' : '';
+                                                    echo "<option value='" . $row->id_propinsi . "' " . $selected . ">" . htmlspecialchars(ucwords($row->nama_propinsi)) . "</option>";
+                                                }
+                                            }
+                                            ?>
+                                        </select>  
+                                        <div id="div_kabupaten">                                         
+                                            <?php
+                                            if (!empty($lokasi))
+                                            {
+                                                $kabupaten = $this->lib_lokasi->get_kabupaten($lokasi->id_propinsi);
+                                                if (!empty($kabupaten))
+                                                {
+                                                    echo "<select class='form-control' name='id_kabupaten' id='kabupaten'>";
+                                                    foreach ($kabupaten as $row)
+                                                    {
+                                                        $selected = ($lokasi->id_kabupaten == $row->id_kabupaten) ? 'selected' : '';
+                                                        echo "<option value='" . $row->id_kabupaten . "' " . $selected . ">" . htmlspecialchars(ucwords($row->nama_kabupaten)) . "</option>";
+                                                    }
+                                                    echo "</select>";
+                                                }  else {
+                                                    echo "<select class='form-control' disabled >";
+                                                        echo "<option value=''>-- Pilih Kabupaten --</option>";
+                                                    echo "</select>";
+                                                }
+                                            }else{
+                                                echo "<select class='form-control' disabled >";
+                                                    echo "<option value=''>-- Pilih Kabupaten --</option>";
+                                                echo "</select>";
+                                            }
+                                            ?>
+                                        </div>  
+                                        <div id="div_kecamatan">
+                                            <?php
+                                            if (!empty($lokasi))
+                                            {
+                                                $kecamatan = $this->lib_lokasi->get_kecamatan($lokasi->id_kabupaten);
+                                                if (!empty($kecamatan))
+                                                {
+                                                    echo "<select class='form-control' name='kecamatan' id='kecamatan'>";
+                                                    echo "<option value=''>-- Pilih Kecamatan --</option>";
+                                                    foreach ($kecamatan as $row)
+                                                    {
+                                                        if (isset($lokasi->id_kecamatan)) {
+                                                            $selected = ($lokasi->id_kecamatan==$row->id_kecamatan)?'selected':'';
+                                                        } else {
+                                                            $selected = '';
+                                                        }
+                                                        echo "<option value='" . $row->id_kecamatan . "' " . $selected . ">" . htmlspecialchars(ucwords($row->nama_kecamatan)) . "</option>";
+                                                    }
+                                                    echo "</select>";
+                                                }else{
+                                                    echo "<select class='form-control' disabled >";
+                                                        echo "<option value=''>-- Pilih Kecamatan --</option>";
+                                                    echo "</select>";
+                                                }
+                                            }else{
+                                                echo "<select class='form-control' disabled >";
+                                                    echo "<option value=''>-- Pilih Kecamatan --</option>";
+                                                echo "</select>";
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                                <div class="clearfix"></div>
+                                <br><br>
+                                <div style="text-align:center;">
+                                    <button class="btn btn-primary save-product" type="submit" name="simpan" value=1>Simpan</button>
+                                </div>                      
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <div class="totop container">
+                <div id="totop" class="ir">
+                    To Top
+                </div>
+            </div>
+        
+</section>
+
+<script type="text/javascript">
+
+    var disableKabupaten = function() {
+        $('#kabupaten, #id_kabupaten').val('').attr('disabled', 'disabled').addClass('disabled');
+    };
+    
+    var disableKecamatan = function() {
+        $('#kecamatan, #id_kecamatan').val('').attr('disabled', 'disabled').addClass('disabled');
+    };
+    
+    $('#propinsi').change(function(e) {
+        if ($(this).val() == '') {
+            disableKabupaten();
+            disableKecamatan();
+            return;
+        }
+        
+        $('#div_kecamatan > div').remove();
+        
+        load_kabupaten('propinsi', 'div_kabupaten', 'id_kabupaten', 'kecamatan');
+    });
+    
+    $(document).on('change', '#kabupaten, #id_kabupaten', function(e) {
+        load_kecamatan('kabupaten','div_kecamatan','kecamatan');
+    });
+
+    function load_kabupaten(idpropinsi,container_kabupaten,nama_input_kabupaten)
+    {
+        var propinsi             = $('#'+idpropinsi).val();        
+        $('#'+container_kabupaten).html("Loading...");
+        $.ajax({
+                type    : "POST",
+                url     : "<?php echo base_url('lokasi/dropdown_kabupaten')?>",
+                data    : "id_propinsi="+propinsi+"&nama_input_kabupaten="+nama_input_kabupaten,
+                success : function(result){
+                    $('#'+container_kabupaten).html(result);
+                }
+            });
+    }
+    
+    function load_kecamatan(idkabupaten,container_kecamatan,nama_input_kecamatan)
+    {
+        var kabupaten = $('#'+idkabupaten).val();        
+        $('#'+container_kecamatan).html("Loading...");
+        $.ajax({
+                type    : "POST",
+                url     : "<?php echo base_url('lokasi/dropdown_kecamatan')?>",
+                data    : "id_kabupaten="+kabupaten+"&nama_input_kecamatan="+nama_input_kecamatan,
+                success : function(result){
+                    $('#'+container_kecamatan).html(result);
+                }
+            });
+    }
+
+    $('#change_pp').click(function(){
+            $("#filePhoto").click();
+     });
+     $("#filePhoto").change(function() {
+            readURL(this);
+     });
+     function readURL(input) {
+             if (input.files && input.files[0]) {
+                     var reader = new FileReader();
+                     reader.onload = function(e) {
+                             $('#previewHolder').attr('src', e.target.result);
+                     }
+
+                     reader.readAsDataURL(input.files[0]);
+             }
+     }
+
+     function isNumberKey(evt)
+    {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if ((charCode > 47 && charCode < 58 ) || charCode == 44 || charCode == 46 || charCode == 8)
+                return true;
+
+         return false;
+    }
+
+    $("#tgl_lahir").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
+     
+</script>
+<?=$this->load->view('publik/ui2/footer')?>
+
+<?php include 'upload.php'; ?>

@@ -1,0 +1,1100 @@
+@charset "utf-8";
+#header{
+	min-height:90px
+}
+
+#header .logobox{
+	background:#fff;
+	width:300px;
+	height:60px;
+	position:absolute;
+	margin-top:18px
+}
+
+#header ul.search{
+	float:right
+}
+
+#header ul.search li{
+	height:30px
+}
+
+#header input[type=text]{
+	padding:6px 5px 6px 25px;
+	font-size:13px;
+	width:151px;
+	background-position:-256px -98px
+}
+
+#header input[type=submit]{
+	width:50px;
+	font-size:14px;
+	padding:6px 12px;
+	border-radius:0 4px 4px 0;
+	color:#FFF;
+	height:29px
+}
+
+.topmenu{
+	padding:6px 0;
+	margin-bottom:5px
+}
+
+#content{
+	top:120px
+}
+
+#footer{
+	padding-top:25px
+}
+
+#pasang{
+	font-size:12px;
+	margin-top:10px
+}
+
+#pasang h3{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png)0 -432px repeat-x;
+	margin-bottom:20px
+}
+
+#pasang h3 span{
+	background:#fff;
+	padding-right:15px
+}
+
+#pasang .red{
+	color:red
+}
+
+#pasang .formBG{
+	padding:10px;
+	margin:2px 0
+}
+
+#pasang .active{
+	background:#f1f1f1
+}
+
+#pasang .success{
+	background:#e8f5df
+}
+
+#pasang .error{
+	background:#fff2ed
+}
+
+#pasang .img-upload{
+	display:block;
+	float:left;
+	width:82px;
+	height:113px;
+	margin-right:10px;
+	overflow:hidden
+}
+
+#pasang .alert{
+	background:#fff1db
+}
+
+.img-upload img{
+	width:80px;
+	height:80px;
+	border:1px solid #ccc
+}
+
+.del-image{
+	position:relative;
+	top:-82px;
+	background:#007aff;
+	padding:0 5px;
+	width:10px;
+	height:15px;
+	left:65px;
+	color:#fff;
+	cursor:pointer;
+	border-radius:0 0 0 4px;
+	-webkit-border-radius:0 0 0 4px;
+	-moz-border-radius:0 0 0 4px
+}
+
+.main-image{
+	position:relative;
+	top:-65px;
+	background:#fff;
+	color:#1c60a7;
+	text-align:center;
+	cursor:pointer;
+	font-size:10px;
+	line-height:11px;
+	padding:3px 0
+}
+
+#pasang .divider,#login .divider{
+	height:5px;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png)0 -442px repeat-x;
+	margin:20px 0;
+	border:0
+}
+
+#pasang .label{
+	width:145px;
+	margin:5px 0 0 0;
+	vertical-align:top;
+	zoom:1
+}
+
+#pasang label{
+	font-weight:bold
+}
+
+#pasang span.radiobutton{
+	width:100px;
+	display:inline-block;
+	margin:5px 0 0 0
+}
+
+#p_facility span.radiobutton{
+	width:130px
+}
+
+#pasang input[type="text"],#pasang input[type="password"],#pasang textarea{
+	width:235px;
+	padding:8px;
+	margin-right:10px;
+	border:3px solid #EEE;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.5);
+	border-radius:4px;
+	background:#fafafa;
+	font-size:14px
+}
+
+#pasang input[type="radio"],#pasang input[type="checkbox"]{
+	margin-right:10px;
+	margin-left:0
+}
+
+#pasang select{
+	width:250px;
+	padding:2px;
+	height:36px;
+	margin-right:10px;
+	border:3px solid #e6e6e6;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.5);
+	background:#fafafa
+}
+
+#pasang input.big,#pasang textarea{
+	width:380px
+}
+
+#pasang input.small{
+	width:120px;
+	min-width:120px
+}
+
+#pasang input[disabled],#pasang select[disabled],#pasang textarea[disabled],#pasang input[readonly],#pasang select[readonly],#pasang textarea[readonly]{
+	background-color:#eee;
+	border-color:#ddd;
+	cursor:not-allowed
+}
+
+#pasang .upload-progress{
+	position:relative;
+	width:90px;
+	height:90px;
+	text-align:center;
+	background:#fff url(http://as.tokobagus.biz/v6/skins/default/images/loader-lite.gif?ver=7.6) center no-repeat;
+	opacity:.9;
+	-moz-opacity:.9;
+	filter:alpha(opacity=.99)
+}
+
+.social{
+	margin-bottom:20px;
+	display:block;
+	height:27px
+}
+
+.social li{
+	display:block;
+	float:left;
+	margin-right:20px
+}
+
+.social li a{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/fbtw.png?ver=7.6) 0 0 no-repeat;
+	width:170px;
+	height:27px;
+	display:block;
+	text-indent:-999px
+}
+
+.social li a.fb{
+	background-position:0 -28px
+}
+
+.social li a.tw{
+	background-position:0 -56px
+}
+
+.social li a:hover{
+	background-position:-171px 0
+}
+
+.social li a.fb:hover{
+	background-position:-171px -28px
+}
+
+.social li a.tw:hover{
+	background-position:-171px -56px
+}
+
+.notification{
+	max-width:335px
+}
+
+.notification p{
+	margin-bottom:0;
+	font-size:12px;
+	padding:2px 0 0 25px
+}
+
+.notification div.arrow{
+	width:13px;
+	height:20px;
+	float:left
+}
+
+.notification div.box{
+	padding:2px 10px;
+	margin-left:12px;
+	border-radius:0 5px 5px;
+	-webkit-border-radius:0 5px 5px;
+	-moz-border-radius:0 5px 5px
+}
+
+.notification div.icon{
+	width:16px;
+	height:20px;
+	float:left
+}
+
+.infos div.arrow{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -223px -69px no-repeat
+}
+
+.infos div.box{
+	background:#bbe9ff;
+	border:1px solid #59c9ff
+}
+
+.infos div.icon{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -66px -215px no-repeat
+}
+
+.error div.arrow{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -223px -205px no-repeat
+}
+
+.error div.box{
+	background:#ffe6e6;
+	border:1px solid #fb7474;
+	color:red
+}
+
+.error div.icon{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -66px -245px no-repeat
+}
+
+.success div.arrow{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -223px -339px no-repeat
+}
+
+.success div.box{
+	background:#ffffd1;
+	border:1px solid #ffd800
+}
+
+.success div.icon{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -66px -275px no-repeat
+}
+
+.alert div.arrow{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -223px -400px no-repeat
+}
+
+.alert div.box{
+	background:#fff2cb;
+	border:1px solid #ffc949
+}
+
+.alert div.icon{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -93px -66px no-repeat
+}
+
+.drag-note{
+	width:162px;
+	height:130px;
+	display:block;
+	position:absolute;
+	margin:35px 0 0 470px;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -60px -300px no-repeat
+}
+
+#promopoin table{
+	width:100%;
+	border-collapse:collapse;
+	margin-bottom:30px
+}
+
+#promopoin table thead th{
+	font-weight:bold;
+	font-size:15px;
+	border-bottom:1px solid #ddd
+}
+
+#promopoin tbody{
+	border-bottom:1px solid #ddd
+}
+
+#promopoin tbody tr{
+	background:#fff
+}
+
+#promopoin tbody tr.alt-row{
+	background:#f3f3f3
+}
+
+#promopoin table td,#promopoin table th{
+	padding:10px;
+	line-height:1.3em
+}
+
+#promopoin table .center{
+	text-align:right
+}
+
+#promopoin table .big{
+	width:150px
+}
+
+.poin-sisa{
+	border:1px solid #ccc;
+	padding:10px;
+	font-size:24px;
+	width:150px;
+	text-align:center;
+	font-weight:bold;
+	float:left;
+	margin-right:10px;
+	margin-bottom:30px
+}
+
+.beli-poin{
+	padding:10px
+}
+
+#uploadFoto{
+	height:105px
+}
+
+.futama{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) 0 -475px no-repeat;
+	width:81px;
+	height:25px;
+	position:relative;
+	top:-10px
+}
+
+.hordot{
+	height:3px !important
+}
+
+#konfirm{
+	text-align:center;
+	margin:30px 0;
+	float:left;
+	position:relative
+}
+
+#konfirm .konfirmasi-text{
+	float:left;
+	padding:40px 20px 20px
+}
+
+.konfirmasi-text .konf-item{
+	display:block;
+	width:260px;
+	float:left;
+	margin:0 15px
+}
+
+.konfirmasi-text span{
+	width:65px;
+	height:65px;
+	margin:0 auto 20px;
+	position:relative;
+	display:block;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) -90px -470px
+}
+
+.konfirmasi-text span.icon-jam{
+	background-position:-90px -535px
+}
+
+.konfirmasi-text span.icon-dobel{
+	background-position:-155px -470px
+}
+
+.konfirmasi-text span.icon-trash{
+	background-position:-155px -535px
+}
+
+.konfirmasi-text .line-icon{
+	height:1px;
+	border-bottom:1px solid #e4e4e4;
+	position:absolute;
+	width:620px;
+	margin:30px 0 0 130px
+}
+
+#konfirm .konfirmasi-link{
+	padding:20px 0;
+	float:left;
+	width:100%;
+	margin:20px 0 0 0
+}
+
+.konfirmasi-link a{
+	margin:0 10px
+}
+
+.konfirmasi-link a:hover{
+	color:#FFF;
+	background-position:0 -210px;
+	border:1px solid #1a76d5;
+	border-bottom:1px solid #0d5fb4
+}
+
+.konfirmasi-text.konf-guest .konf-item{
+	width:190px
+}
+
+.konfirm{
+	font-size:13px;
+	margin-bottom:50px;
+	text-align:center;
+	line-height:16px;
+	color:#333;
+	margin:0 100px;
+	background-color:#a5dbff;
+	border:1px solid #6af;
+	color:#333;
+	padding:10px 10px 20px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px
+}
+
+.info{
+	display:block;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) 0 -346px no-repeat;
+	width:45px;
+	height:45px;
+	line-height:45px;
+	float:left;
+	margin-left:10px
+}
+
+.divider{
+	height:1px;
+	border-bottom:1px dotted #ddd;
+	margin:20px 100px 20px
+}
+
+.divider2{
+	width:80%;
+	margin:20px 10% 0 10%;
+	float:left
+}
+
+.dropmenu.home{
+	padding:7px 10px 4px 10px
+}
+
+.catnav{
+	top:92px
+}
+
+.catnav.location{
+	margin-left:483px
+}
+
+.catnav.category{
+	margin-left:644px
+}
+
+.popup-box.wide{
+	width:800px;
+	margin-top:4%;
+	height:400px
+}
+
+.popup-con.preview{
+	text-align:left;
+	height:340px;
+	overflow:auto
+}
+
+.preview h1{
+	font-size:26px;
+	color:#333;
+	font-weight:bold;
+	line-height:1.2em;
+	margin-bottom:15px
+}
+
+.preview .price{
+	font-size:20px;
+	font-weight:bold;
+	color:#333;
+	margin-bottom:15px
+}
+
+.preview .rp{
+	font-size:.7em;
+	text-transform:capitalize;
+	color:#666;
+	font-weight:normal;
+	margin-right:6px
+}
+
+.fotobig{
+	overflow:hidden;
+	text-align:center;
+	border:1px dotted #DDD;
+	border-width:1px 0;
+	margin-bottom:10px
+}
+
+.fotobig .img-container{
+	width:648px;
+	height:648px;
+	max-width:648px;
+	max-height:648px;
+	vertical-align:middle;
+	display:table-cell;
+	border:1px #999 solid
+}
+
+.fotothumb{
+	width:100px;
+	height:650px
+}
+
+.fotolist{
+	width:91px;
+	height:91px;
+	border:1px solid #DDD;
+	box-shadow:2px 3px 5px rgba(0,0,0,.1);
+	float:left;
+	margin-bottom:10px;
+	cursor:pointer
+}
+
+.fotolist img{
+	width:85px;
+	height:85px;
+	border:3px solid white
+}
+
+.fotolist:hover,.fotolist.active{
+	border:3px solid #BBB;
+	margin:-2px -2px 8px -2px
+}
+
+.fotolist.active{
+	border-color:#6ebcf7
+}
+
+.adsspec{
+	border-radius:4px;
+	background:#fafafa;
+	border:1px solid #eaeaea;
+	padding:15px;
+	margin-bottom:10px
+}
+
+.adsspec ul{
+	margin:10px 0
+}
+
+.adsspec ul li{
+	float:left;
+	margin:0 15px 5px 0;
+	width:190px;
+	padding-left:100px
+}
+
+.adsspec .type{
+	width:90px;
+	display:inline-block;
+	color:#888;
+	margin-left:-100px
+}
+
+ul.fasil li{
+	margin-left:-100px
+}
+
+.adsspec .check{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-inner.png?ver=7.6) -226px -189px;
+	width:15px;
+	height:15px;
+	margin-right:3px
+}
+
+.btn-simpan{
+	margin:30px 0
+}
+
+.btn-item{
+	margin-right:50px;
+	border:1px solid #ccc;
+	color:#333;
+	background:#fcfff4;
+	background:-moz-linear-gradient(top,#fcfff4 0,#dfe5d7 40%,#b3bead 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fcfff4),color-stop(40%,#dfe5d7),color-stop(100%,#b3bead));
+	background:-webkit-linear-gradient(top,#fcfff4 0,#dfe5d7 40%,#b3bead 100%);
+	background:-o-linear-gradient(top,#fcfff4 0,#dfe5d7 40%,#b3bead 100%);
+	background:-ms-linear-gradient(top,#fcfff4 0,#dfe5d7 40%,#b3bead 100%);
+	background:linear-gradient(to bottom,#fcfff4 0,#dfe5d7 40%,#b3bead 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfff4',endColorstr='#b3bead',GradientType=0)
+}
+
+.btn-item:hover{
+	border:1px solid #ccc;
+	color:#333;
+	background:#b3bead;
+	background:-moz-linear-gradient(top,#b3bead 0,#dfe5d7 60%,#fcfff4 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#b3bead),color-stop(60%,#dfe5d7),color-stop(100%,#fcfff4));
+	background:-webkit-linear-gradient(top,#b3bead 0,#dfe5d7 60%,#fcfff4 100%);
+	background:-o-linear-gradient(top,#b3bead 0,#dfe5d7 60%,#fcfff4 100%);
+	background:-ms-linear-gradient(top,#b3bead 0,#dfe5d7 60%,#fcfff4 100%);
+	background:linear-gradient(to bottom,#b3bead 0,#dfe5d7 60%,#fcfff4 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3bead',endColorstr='#fcfff4',GradientType=0)
+}
+
+.previewtag{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/preview.png?ver=7.6) 0 0 no-repeat;
+	width:100px;
+	height:100px;
+	position:relative;
+	top:-473px;
+	right:-700px
+}
+
+.pop-close.preclose{
+	position:relative;
+	top:-563px;
+	right:10px
+}
+
+.popup-foot .btn-simpan{
+	margin:0;
+	padding:10px 0
+}
+
+.formBG#uploadFoto{
+	height:200px
+}
+
+#add-photo,#add-photo1,#add-photo2,#add-photo3,#add-photo4,#add-photo5,#add-photo6,#pasang .img-upload{
+	width:90px;
+	height:90px;
+	background:0;
+	background:#f6f6f6;
+	border:1px solid #CCC;
+	margin:1px 10px 10px 1px;
+	box-shadow:none;
+	border-radius:6px;
+	cursor:pointer;
+	overflow:hidden
+}
+
+#add-photo:hover,#add-photo1:hover,#add-photo2:hover,#add-photo3:hover,#add-photo4:hover,#add-photo5:hover,#add-photo6:hover,#pasang .img-upload:hover{
+	border:2px solid #b2cbec;
+	margin:0 9px 9px 0
+}
+
+.foto-add,.img-upload img{
+	width:82px;
+	height:82px;
+	border:4px solid #FFF
+}
+
+.foto-add-ico{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat -162px -125px;
+	margin:25px auto;
+	width:32px;
+	height:32px
+}
+
+.foto-del-ico,.del-image{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat -134px -129px;
+	width:24px;
+	height:24px;
+	padding:0;
+	top:inherit;
+	left:inherit;
+	position:absolute;
+	margin:-24px 0 0 0;
+	z-index:101
+}
+
+.futama{
+	position:absolute;
+	z-index:100;
+	top:inherit;
+	margin:-100px 5px
+}
+
+.foto-upload{
+	padding:0;
+	background:#eff4fb;
+	border:1px solid #a8c9f5;
+	border-radius:4px;
+	width:135px !important;
+	margin:0 10px 0 0 !important;
+	color:#036;
+	height:194px
+}
+
+.judul-foto-box{
+	background:#c6d5e9;
+	margin:6px 0;
+	padding:5px 0
+}
+
+.judul-foto-icon{
+	margin-top:5px;
+	font-size:1.1em;
+	font-weight:bold;
+	height:30px;
+	width:34px
+}
+
+.panah-foto-box{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat -200px -130px;
+	width:8px;
+	height:20px;
+	margin:7px -8px 0 0
+}
+
+.foto-icon{
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat -134px -161px;
+	width:55px;
+	height:38px;
+	margin-right:4px
+}
+
+.desc-foto-box{
+	padding:5px;
+	font-size:.9em
+}
+
+.hapus .container{
+	width:660px;
+	float:left;
+	margin:0 0 40px 55px;
+	background-color:#f4f4f4;
+	padding:40px 80px;
+	border:1px solid #ddd
+}
+
+.hapus .container h4{
+	color:#bf0e12;
+	font-size:18px
+}
+
+.hapus .container .ikl-wrapper{
+	background-color:#FFF;
+	border:1px solid #eaeaea;
+	padding:10px 20px;
+	height:95px;
+	margin:20px 0
+}
+
+.ikl-wrapper .ikl-box{
+	width:320px;
+	float:left
+}
+
+.ikl-wrapper .ikl-box h4{
+	color:#3b3c3c;
+	font-size:16px;
+	float:left;
+	line-height:20px;
+	margin-top:20px
+}
+
+.ikl-wrapper .ikl-box ul{
+	float:left;
+	width:100%
+}
+
+.ikl-wrapper .foto-wrapper{
+	width:95px;
+	height:95px;
+	float:left;
+	margin:0 20px 0 0
+}
+
+.ikl-wrapper .foto-wrapper .fotobox{
+	width:95px;
+	height:95px;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center
+}
+
+.ikl-wrapper .foto-wrapper .fotobox img{
+	max-height:85px;
+	max-width:85px;
+	padding:4px;
+	background:#FFF;
+	border:1px solid #ededed
+}
+
+.price{
+	float:right;
+	width:137px;
+	font-size:16px;
+	font-weight:bold;
+	color:#333;
+	text-align:right;
+	margin-top:20px
+}
+
+.price .rp{
+	font-size:.7em;
+	text-transform:capitalize;
+	color:#666;
+	font-weight:normal;
+	margin-right:3px
+}
+
+.konf-hapus{
+	float:right;
+	margin-top:10px
+}
+
+.konf-hapus span{
+	font-size:14px;
+	float:left;
+	margin:10px 20px 0 0
+}
+
+.konf-hapus .button-area{
+	float:left
+}
+
+.konf-hapus .button-area a.btn{
+	width:80px;
+	position:relative;
+	float:left;
+	text-align:center;
+	margin-right:10px
+}
+
+.konf-hapus .button-area a.btn:hover{
+	color:#FFF;
+	background-position:0 -210px;
+	border:1px solid #1a76d5;
+	border-bottom:1px solid #0d5fb4
+}
+
+.konf-hapus .button-area a.btn.btn-red{
+	background:#f00 url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) 0 -265px repeat-x;
+	border:1px solid red
+}
+
+.konf-hapus .button-area a.btn.btn-red:hover{
+	background:#F00
+}
+
+a.cat-overlay-button{
+	display:block;
+	height:40px;
+	width:600px;
+	position:absolute;
+	margin-top:-38px
+}
+
+#content a.cat-overlay-button:hover{
+	border-bottom:0
+}
+
+.cat-overlay{
+	position:fixed;
+	background:rgba(0,0,0,0);
+	z-index:99999;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0
+}
+
+.cat-select-ov{
+	position:absolute;
+	z-index:99999;
+	*width:800px;
+	*height:370px;
+	top:50%;
+	left:56%;
+	margin-top:-225px;
+	margin-left:-450px;
+	padding:30px 50px 50px 50px;
+	border:1px solid #d2d2d2;
+	border-radius:18px;
+	background:#f8f8f8;
+	background:-moz-linear-gradient(top,#f8f8f8 0,#f8f8f8 0,#eaeaea 30%,#e6e6e6 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#f8f8f8),color-stop(0,#f8f8f8),color-stop(30%,#eaeaea),color-stop(100%,#e6e6e6));
+	background:-webkit-linear-gradient(top,#f8f8f8 0,#f8f8f8 0,#eaeaea 30%,#e6e6e6 100%);
+	background:-o-linear-gradient(top,#f8f8f8 0,#f8f8f8 0,#eaeaea 30%,#e6e6e6 100%);
+	background:-ms-linear-gradient(top,#f8f8f8 0,#f8f8f8 0,#eaeaea 30%,#e6e6e6 100%);
+	background:linear-gradient(to bottom,#f8f8f8 0,#f8f8f8 0,#eaeaea 30%,#e6e6e6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8',endColorstr='#e6e6e6',GradientType=0);
+	-webkit-box-shadow:0 0 18px 0 rgba(50,50,50,0.75);
+	-moz-box-shadow:0 0 18px 0 rgba(50,50,50,0.75);
+	box-shadow:0 0 18px 0 rgba(50,50,50,0.75)
+}
+
+.cat-select-ov h3{
+	font-size:14px;
+	font-weight:bold;
+	width:235px;
+	text-align:center;
+	float:left
+}
+
+.cat-selectbox ul{
+	background:#FFF;
+	float:left;
+	padding:5px 0;
+	height:330px;
+	width:235px;
+	overflow-x:hidden;
+	overflow-y:auto
+}
+
+.cat-selectbox ul li{
+	margin:2px 0 2px 5px
+}
+
+.cat-selectbox ul li a{
+	padding:6px 16px 4px 16px;
+	width:215px;
+	display:block;
+	font-size:13px
+}
+
+.cat-selectbox ul li a:hover,.cat-selectbox ul li.selected a{
+	background:#1b70ca;
+	color:#FFF
+}
+
+#content .cat-selectbox a:hover{
+	border-bottom:0
+}
+
+.cat-selectbox ul li a:hover span,.cat-selectbox ul li.selected a span{
+	background-position:0 -515px
+}
+
+.cat-selectbox ul li a span{
+	position:relative;
+	float:right;
+	height:15px;
+	width:10px;
+	display:block;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat 0 -540px
+}
+
+.lev-separator{
+	display:block;
+	margin:0 13px;
+	width:20px;
+	height:20px
+}
+
+.lev-separator span{
+	height:25px;
+	width:20px;
+	display:block;
+	margin-top:155px;
+	background:url(http://as.tokobagus.biz/v6/skins/default/images/sprite-dash.1.0.6.png) no-repeat -10px -510px
+}
+
+.cat-select-ov .box-close{
+	*width:10px;
+	*height:14px;
+	padding:8px 10px;
+	display:block;
+	background:#1970c9;
+	color:#FFF;
+	font-weight:bold;
+	font-size:14px;
+	position:absolute;
+	top:4px;
+	right:4px;
+	cursor:pointer;
+	border-radius:30px;
+	-moz-border-radius:30px;
+	-webkit-box-shadow:0 0 4px rgba(0,0,0,0.4);
+	-moz-box-shadow:0 0 4px rgba(0,0,0,0.4);
+	box-shadow:0 0 4px rgba(0,0,0,0.4)
+}
+
+.cat-breadcrumb-container ul{
+	margin:5px 20px 0 0
+}
+
+.cat-breadcrumb-container ul li{
+	font-weight:bold
+}
+
+.cat-breadcrumb-container a{
+	margin:-5px 0 0 0
+}
+
+.cat-breadcrumb-container a:hover{
+	color:#FFF;
+	background-position:0 -210px;
+	border:1px solid #1a76d5;
+	border-bottom:1px solid #0d5fb4
+}
+
+.cat-breadcrumb-container.edit{
+	margin-bottom:10px
+}
+
+.cat-breadcrumb-container.edit ul{
+	padding-bottom:5px;
+	border-bottom:1px dotted #b1b1b1
+}
+
+.notification.alert{
+	width:600px;
+	max-width:600px;
+	clear:both
+}
+
+.notification.alert div.box{
+	margin-left:0
+}
+
+.notification.alert p{
+	color:#3f3f3f
+}

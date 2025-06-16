@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+                               http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="contoh.service.class">Cipika\Service\ContohService</parameter>
+        <parameter key="flysystem.class">League\Flysystem\Filesystem</parameter>
+        <parameter key="flysystem.adapter.local.class">League\Flysystem\Adapter\Local</parameter>
+        <parameter key="flysystem.adapter.local.path">asset/upload</parameter>
+        <parameter key="flysystempublic.class">League\Flysystem\Filesystem</parameter>
+        <parameter key="flysystempublic.adapter.local.class">League\Flysystem\Adapter\Local</parameter>
+        <parameter key="flysystempublic.adapter.local.path">public</parameter>
+    </parameters>
+
+    <services>
+        <service id="contoh.service" class="%contoh.service.class%" />
+        <service id="flysystem.adapter.local" class="%flysystem.adapter.local.class%">
+            <argument type="string">%flysystem.adapter.local.path%</argument>
+        </service>
+        <service id="flysystempublic.adapter.local" class="%flysystempublic.adapter.local.class%">
+            <argument type="string">%flysystempublic.adapter.local.path%</argument>
+        </service>
+        <service id="flysystem" class="%flysystem.class%">
+            <argument type="service" id="flysystem.adapter.local"/>
+        </service>
+        <service id="flysystempublic" class="%flysystempublic.class%">
+            <argument type="service" id="flysystempublic.adapter.local"/>
+        </service>
+        <service id="redis" class="Redis">
+            <call method="pconnect">
+                <argument type="string">127.0.0.1</argument>
+            </call>
+        </service>
+        <service id="cache" class="Doctrine\Common\Cache\RedisCache">
+            <call method="setRedis">
+                <argument type="service" id="redis" />
+            </call>
+        </service>
+
+        <service id="plates.engine.factory" class="Cipika\League\Plates\EngineFactory" />
+        <service id="plates" class="League\Plates\Engine">
+            <factory service="plates.engine.factory" method="createEngine" />
+            <argument type="string">application/views/plates</argument>
+        </service>
+
+        <service id="session" class="Cipika\Component\Http\CiSessionSegment">
+        </service>
+
+        <service id="db.connection_manager" class="Cipika\Component\Database\ConnectionManager" />
+        <service id="db" class="Doctrine\DBAL\Connection">
+            <factory service="db.connection_manager" method="getConnection" />
+        </service>
+
+        <!-- models -->
+        <service id="model.ui2.home" class="Cipika\Application\Model\Ui2\Home">
+            <argument type="service" id="db" />
+        </service>
+        <!-- end models -->
+
+        <service id="cipika.event_dispatcher" class="Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher">
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="cipika.event_listener.product_view" class="Cipika\Component\Event\Listener\ProductViewListener">
+            <argument type="service" id="cipika.event_dispatcher" />
+            <tag name="cipika.event_listener" event="cipika.event.product_view" method="onProductView" />
+        </service>
+
+        <service id="log" class="Monolog\Logger">
+            <argument type="string">general</argument>
+            <call method="pushHandler">
+                <argument type="service" id="loghandler" />
+            </call>
+        </service>
+
+        <service id="loghandler" class="Monolog\Handler\StreamHandler">
+            <argument type="string">application/logs/log.log</argument>
+        </service>
+
+    </services>
+
+</container>

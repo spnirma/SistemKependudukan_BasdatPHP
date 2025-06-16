@@ -1,0 +1,35 @@
+{
+    "name": "cipika/cipika-app",
+    "require": {
+        "php": ">=5.5",
+        "google/apiclient": "1.1.*",
+        "zendframework/zend-mail": "~2.3",
+        "erusev/parsedown": "~1.5",
+        "symfony/dependency-injection": "~2.6",
+        "symfony/event-dispatcher": "~2.6",
+        "symfony/config": "~2.6",
+        "league/flysystem": "~1.0",
+        "doctrine/cache": "~1.4",
+        "league/plates": "~3.0",
+        "doctrine/dbal": "~2.5",
+        "robmorgan/phinx": "0.4.3",
+        "monolog/monolog": "~1.13",
+        "jwage/easy-csv" : "0.0.2",
+        "guzzlehttp/guzzle": "~5.0",
+        "mikehaertl/phpwkhtmltopdf": "^2.1",
+        "spatie/array-to-xml": "^2.1",
+        "endroid/qrcode": "^2.2",
+        "picqer/php-barcode-generator": "^0.2.2",
+        "endroid/qr-code": "^2.5"
+    },
+    "autoload": {
+        "psr-0": {
+            "Cipika\\": "src"
+        }
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "~5.0",
+        "squizlabs/php_codesniffer": "^2",
+        "mayflower/php-codebrowser": "^1"
+    }
+}

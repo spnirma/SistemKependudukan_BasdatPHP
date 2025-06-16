@@ -1,0 +1,114 @@
+.category-slider .owl-controls .owl-prev, 
+.category-slider .owl-controls .owl-next {
+  background: #aaa;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  -moz-transition: all 0.45s ease;
+  -webkit-transition: all 0.45s ease;
+  -o-transition: all 0.45s ease;
+  -ms-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+
+}
+.category-slider .owl-controls .owl-prev:hover, 
+.category-slider .owl-controls .owl-next:hover{
+  background: #ff3366;
+}
+.category-slider .owl-controls .owl-prev{
+  left: 50%;
+}
+.category-slider .owl-controls .owl-next{
+  right: 50%;
+}
+.category-slider:hover .owl-controls .owl-next{
+    right: 0;
+    visibility: inherit;
+    opacity: 1;
+}
+.category-slider:hover .owl-controls .owl-prev{
+    left: 0;
+    visibility: inherit;
+    opacity: 1;
+}
+
+/** subcategories **/
+.subcategories{
+  border: 1px solid #e4e4e4;
+  margin-top: 0px;
+}
+.subcategories ul{
+  overflow: hidden;
+}
+.subcategories li {
+  display: inline;
+  float: left;
+  
+}
+.subcategories li a{
+  height: 34px;
+  float: left;
+  line-height: 34px;
+  padding: 0 40px;
+  font-size: 13px;
+}
+.subcategories li a:hover{
+  background: #f2f2f2;
+  color: #666;
+}
+.subcategories li.current-categorie{
+    position: relative;
+}
+.subcategories li.current-categorie:after{
+
+    font: normal normal normal 14px/1 FontAwesome;
+      content: "\f0da";
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      color: #000;
+
+}
+.subcategories li.current-categorie a{
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.view-product-list{
+  margin-top: 20px;
+  position: relative;
+}
+.page-heading{
+  height: 41px;
+  border-bottom: 1px solid #eaeaea;
+  line-height: 40px;
+  position: relative;
+  font-size: 24px;
+}
+.page-heading span.page-heading-title{
+  border-bottom: 3px solid #ff3366;
+  position: absolute;
+  bottom: -1px;
+  padding: 0 12px;
+}
+.page-heading span.page-heading-title2{
+  text-transform: uppercase;
+}
+.no-line{
+  border-bottom: none;
+}
+.view-product-list .display-product-option{
+  position: absolute;
+  top: 0;
+  right: 0;
+}

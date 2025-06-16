@@ -1,0 +1,1413 @@
+@charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,input,table,caption,tbody,tfoot,thead,tr,th,td{
+	*margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline
+}
+
+:focus{
+	outline:0
+}
+
+body{
+	line-height:1;
+	color:black;
+	background:white
+}
+
+ol,ul{
+	list-style:none
+}
+
+table{
+	border-collapse:separate;
+	border-spacing:0
+}
+
+caption,th,td{
+	text-align:left;
+	font-weight:normal
+}
+
+blockquote:before,blockquote:after,q:before,q:after{
+	content:""
+}
+
+blockquote,q{
+	quotes:"" ""
+}
+
+i{
+	font-style:normal
+}
+
+body,textarea{
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12px;
+	color:#333;
+	line-height:15px
+}
+
+a{
+	text-decoration:none;
+	color:#1c60a7;
+	outline:0
+}
+
+a:hover{
+	color:#517edf
+}
+
+sup{
+	font-size:.7em;
+	margin-top:-19px;
+	vertical-align:top
+}
+
+em{
+	font-style:italic
+}
+
+input[type=radio]{
+	margin-right:10px
+}
+
+h3{
+	font-size:18px;
+	line-height:27px
+}
+
+small{
+	font-size:11px
+}
+
+.nomargin{
+	margin:0!important
+}
+
+p{
+	margin:0 0 9px
+}
+
+.wrapper{
+	width:930px;
+	padding:0 15px;
+	margin:auto
+}
+
+.kir{
+	float:left
+}
+
+.kan{
+	float:right
+}
+
+.clr{
+	clear:both;
+	height:0;
+	visibility:hidden
+}
+
+.header-clr{
+	height:0;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid solid #FFF;
+	margin:10px 0;
+	clear:both
+}
+
+.horbar-bevel{
+	height:0;
+	margin:10px 0;
+	border-top:1px solid rgba(0,0,0,.1);
+	border-bottom:1px solid rgba(255,255,255,.8);
+	clear:both
+}
+
+.horbar{
+	height:0;
+	border-top:1px dotted #DDD;
+	margin:10px 0;
+	clear:both
+}
+
+.hordot,.hordot_promo{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) 0 -190px repeat-x;
+	height:9px;
+	margin:15px 0;
+	clear:both
+}
+
+.verbar-bevel{
+	width:0;
+	height:26px;
+	border-left:1px solid rgba(0,0,0,.1);
+	border-right:1px solid rgba(255,255,255,.8);
+	margin:-6px 8px 0 8px;
+	display:inline
+}
+
+.verbar-bevel.kir{
+	margin-left:8px
+}
+
+.hidden{
+	display:none
+}
+
+.invis{
+	visibility:hidden
+}
+
+.top10{
+	margin-top:10px
+}
+
+.top20{
+	margin-top:20px
+}
+
+.emptycell{
+	height:5px
+}
+
+.abs{
+	position:absolute
+}
+
+.logolink{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) no-repeat 0 -320px;
+	text-indent:-1000px;
+	width:252px;
+	height:54px;
+	float:left;
+	margin-top:7px
+}
+
+.nomorsiji{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) no-repeat 0 -120px;
+	width:25px;
+	height:38px;
+	margin:-10px 0 0 -16px
+}
+
+.plus-med,.plus-big{
+	width:16px;
+	height:16px;
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -2px -85px;
+	margin-right:5px
+}
+
+.plus-big{
+	background-position:-2px -100px;
+	margin:2px 10px 0 0
+}
+
+.arrdown,.arrdown-off,.arrup,.arrup-off{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -150px -178px no-repeat;
+	width:9px;
+	height:9px;
+	display:inline-block;
+	margin:4px 0 0 0;
+	cursor:pointer
+}
+
+.arrdown-off,.arrdown:hover{
+	background-position:-160px -178px
+}
+
+.arrup{
+	background-position:-150px -170px
+}
+
+.arrup-off{
+	background-position:-160px -170px
+}
+
+.arr-breadcrumb{
+	width:5px;
+	height:7px;
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -150px -153px no-repeat;
+	margin:0 0 0 8px;
+	display:inline-block
+}
+
+.tabbox li{
+	float:left;
+	font-size:14px
+}
+
+.jml{
+	font-size:.9em;
+	color:#AAA;
+	margin:0 0 0 5px;
+	font-weight:normal
+}
+
+.tabon,.taboff{
+	border-radius:4px 4px 0 0;
+	border:1px solid #DDD;
+	border-width:1px 1px 0 1px;
+	margin-right:5px;
+	padding:8px 12px;
+	background:#FFF;
+	cursor:pointer
+}
+
+.tabon{
+	font-weight:bold;
+	padding-bottom:9px;
+	margin-bottom:-1px
+}
+
+.taboff{
+	border-color:#e6e6e6;
+	background:#EEE;
+	color:#4c6db4
+}
+
+.opt{
+	position:static;
+	padding:2px 0 2px 8px;
+	color:#4c6db4;
+	font-size:10px;
+	margin-top:-20px;
+	background:url(http://as.tokobagus.biz/v6/global/images/header-bg.jpg)
+}
+
+.formcbox{
+	margin:0 15px 15px 0;
+	font-size:11px;
+	color:#666
+}
+
+.cbox input{
+	margin-top:-1px;
+	margin-right:5px
+}
+
+.grey{
+	color:#AAA!important
+}
+
+.upcase{
+	text-transform:uppercase!important
+}
+
+.f10{
+	font-size:10px!important
+}
+
+.f11{
+	font-size:11px!important
+}
+
+.f12{
+	font-size:12px!important
+}
+
+.f13em{
+	font-size:1.3em
+}
+
+.noborder{
+	border:0!important
+}
+
+img.avatar{
+	border:3px solid #FFF;
+	box-shadow:1px 2px 3px rgba(0,0,0,.1);
+	float:left;
+	margin-right:10px
+}
+
+ul.paging{
+	margin-top:20px;
+	font-weight:bold;
+	color:#BBB;
+	height:50px
+}
+
+ul.paging li{
+	float:left;
+	margin:0 3px 0 0
+}
+
+ul.paging a{
+	padding:3px 8px 4px 8px;
+	border-radius:3px;
+	border:1px solid #DDD
+}
+
+ul.paging a:hover{
+	color:#FFF;
+	background:#4c6db4;
+	border-color:#4c6db4
+}
+
+ul.paging a.on,ul.paging a.on:hover{
+	background:#EEE;
+	color:#666;
+	cursor:default;
+	border-color:#DDD
+}
+
+#header{
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:190;
+	background:#FFF;
+	padding-bottom:20px
+}
+
+.redbar{
+	height:3px;
+	border-bottom:1px solid #FFF;
+	background:#FFF
+}
+
+#header h1{
+	text-indent:-9999em
+}
+
+.topmenu{
+	padding-top:13px
+}
+
+.user-welcome{
+	margin:10px 10px 0 0
+}
+
+.login-box{
+	height:24px;
+	border-radius:5px;
+	border:1px solid #DDD;
+	padding:9px 12px 0 12px;
+	margin-right:10px;
+	background:#f8f8f8;
+	box-shadow:0 2px 2px rgba(0,0,0,.08)
+}
+
+#header ul.search li{
+	height:43px;
+	overflow:hidden;
+	float:left;
+	box-shadow:0 0 3px rgba(0,0,0,.08);
+	border-radius:0
+}
+
+#header input[type=text]{
+	border:1px solid #CCC;
+	padding:15px 5px 11px 30px;
+	border-radius:4px 0 0 4px;
+	box-shadow:inset 0 3px 3px rgba(0,0,0,.08);
+	width:430px;
+	background:#FFF url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -253px -91px no-repeat;
+	font-size:16px;
+	color:#666;
+	height:15px
+}
+
+.dropmenu{
+	background:#FFF;
+	border:1px solid #ccc;
+	border-width:1px 1px 1px 0;
+	display:inline-block;
+	cursor:pointer
+}
+
+.dropmenu.home{
+	font-size:14px;
+	padding:12px 10px 13px 10px;
+	margin:0
+}
+
+.dropmenu:hover{
+	background:#1b70ca;
+	border-color:#1b70ca;
+	color:#FFF
+}
+
+.dropmenu .arrdown,.dropmenu .arrup{
+	margin-left:10px
+}
+
+.dropmenu:hover .arrdown{
+	background-position:-170px -178px
+}
+
+.dropmenu:hover .arrup{
+	background-position:-170px -170px
+}
+
+.dropmenu.divend{
+	border-right-width:1px;
+	margin-left:-4px
+}
+
+.dropmenu .divtext{
+	width:145px;
+	height:16px;
+	overflow:hidden;
+	display:inline-block;
+	float:left;
+	word-break:break-all
+}
+
+.dropmenu.chosen{
+	color:#1b70ca;
+	font-weight:bold
+}
+
+.dropmenu.chosen:hover{
+	color:#FFF
+}
+
+.dropmenu.lite{
+	padding:6px 3px 3px 5px;
+	margin:-7px 10px 0 0;
+	border-width:1px;
+	border-radius:3px;
+	box-shadow:0 1px 3px rgba(0,0,0,.2);
+	background:#FFF;
+	font-size:11px;
+	color:#333;
+	border-color:#BBB
+}
+
+.dropmenu.lite .divtext{
+	width:84px;
+	word-break:break-all
+}
+
+.dropmenu.lite:hover{
+	background:#FFF;
+	color:#333;
+	border-color:#CCC
+}
+
+.dropmenu.lite .arrdown{
+	background-position:-150px -181px;
+	height:7px;
+	margin-top:4px;
+	margin-left:0
+}
+
+.dropmenu-item{
+	position:absolute;
+	z-index:50;
+	background:#FFF;
+	border:1px solid #CCC;
+	border-radius:0 0 3px 3px;
+	float:right;
+	box-shadow:1px 4px 7px rgba(0,0,0,.3);
+	margin:6px 0 0 -6px;
+	min-width:101px
+}
+
+.dropmenu-item ul{
+	padding-bottom:5px
+}
+
+.dropmenu-item li{
+	padding:3px 7px 6px 7px;
+	border-bottom:1px dotted #DDD
+}
+
+.dropmenu-item li:hover{
+	background:#f8f8f8
+}
+
+#header input[type=submit]{
+	width:90px;
+	font-size:18px;
+	padding:9px 12px;
+	border-radius:0 4px 4px 0;
+	color:#FFF;
+	height:43px
+}
+
+.guidebtn{
+	margin:25px 0 0 10px;
+	float:left;
+	font-weight:bold;
+	border-bottom:1px dotted #517edf;
+	font-size:14px
+}
+
+.divider-top{
+	z-index:-10;
+	position:absolute;
+	bottom:-4px;
+	width:930px;
+	height:30px;
+	display:block;
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) 0 -410px
+}
+
+a.pasang-iklan,a.pasang-iklan-big,input[type=submit],input[type=button],.button,.btn,input[type=reset],.reset{
+	padding:8px 12px;
+	background:#1a71c9 url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) 0 -30px repeat-x;
+	color:rgba(255,255,255,1);
+	font-weight:bold;
+	font-size:14px;
+	text-shadow:0 1px 2px rgba(0,0,0,.4);
+	border-radius:4px;
+	border:1px solid #1a76d5;
+	border-bottom:1px solid #0d5fb4;
+	box-shadow:1px 1px 1px #ccc;
+	cursor:pointer
+}
+
+#content input[type=submit],#content input[type=button],.button,#content input[type=reset],.reset,.btn{
+	margin-top:0
+}
+
+input[type=reset],.reset{
+	background-position:0 -265px;
+	border-color:#900;
+	margin-left:5px
+}
+
+a.pasang-iklan:hover,input[type=submit]:hover,input[type=button]:hover,.button:hover,input[type=reset]:hover,.reset:hover{
+	color:#FFF;
+	background-position:0 -210px;
+	border:1px solid #1a76d5;
+	border-bottom:1px solid #0d5fb4
+}
+
+#content{
+	position:absolute;
+	top:140px;
+	width:100%;
+	padding-top:20px
+}
+
+#content #wrapper{
+	min-height:255px
+}
+
+#content #footer #wrapper{
+	min-height:20px
+}
+
+.breadcrumbs li{
+	float:left;
+	margin-right:8px;
+	padding:0;
+	font-size:13px
+}
+
+.breadcrumbs h2,.breadcrumbs h1{
+	font-size:13px
+}
+
+#content input[type=text],#content textarea,#content input[type=password]{
+	background:#FFF;
+	border:4px solid #f0f0f0;
+	border-radius:4px;
+	padding:5px 7px;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.5)
+}
+
+#content input[type=password]{
+	font-size:13px;
+	color:#666;
+	padding:5px 7px;
+	height:16px;
+	font-size:14px\9
+}
+
+#content input[type=text],#content input[type=password],#content textarea{
+	min-width:270px
+}
+
+#content input#comment_captcha{
+	min-width:50px
+}
+
+#content input[type=text]:focus,#content textarea:focus,#content select:focus,#content input[type=password]:focus{
+	border-color:#DDD;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.8)
+}
+
+#content form label{
+	float:left;
+	clear:both;
+	margin:0 10px 0 0;
+	min-width:100px
+}
+
+#content .invalid{
+	border-color:#F00!important
+}
+
+#content .invalid:focus{
+	border-color:#FCC!important
+}
+
+#content .valid{
+	border-color:#55c44c!important
+}
+
+#content .valid:focus{
+	border-color:#9df796!important
+}
+
+.notifvalid,.notifinvalid{
+	padding:6px 8px 3px 6px;
+	border-radius:5px
+}
+
+.notifvalid .ico,.notifinvalid .ico{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -50px -90px;
+	width:21px;
+	height:21px;
+	margin:-2px 5px 0 0
+}
+
+.notifinvalid .ico{
+	background-position:-25px -90px
+}
+
+.adbanner{
+	display:none
+}
+
+.topbanner{
+	padding:5px 0 10px 0
+}
+
+.topbanner img,.topbanner object,.topbanner iframe,.topbanner div{
+	margin:0!important
+}
+
+.banner-bottom{
+	margin:-10px 0 0 0
+}
+
+.skyscraper{
+	margin-left:960px;
+	margin-top:0;
+	position:absolute;
+	top:0
+}
+
+.leaderboard{
+	margin:auto;
+	text-align:center
+}
+
+.adbanner img,.adbanner object,.adbanner iframe,.adbanner div{
+	margin:10px auto 15px
+}
+
+.skyscraper img,.skyscraper object,.skyscraper iframe{
+	margin-left:20px
+}
+
+.adbanner iframe img,.adbanner iframe object{
+	margin-left:0
+}
+
+.sticky{
+	height:50px;
+	padding:0;
+	position:fixed;
+	margin-left:-25px;
+	z-index:100
+}
+
+.sticky img{
+	margin:0
+}
+
+.sticky.bottom{
+	bottom:0
+}
+
+.close-x{
+	float:right;
+	margin:0 -15px;
+	background:#FFF;
+	color:#888;
+	font-weight:bold;
+	font-size:.8em;
+	line-height:0;
+	height:8px;
+	width:10px;
+	padding:5px 0 0 4px;
+	cursor:pointer;
+	border:1px solid #DDD
+}
+
+.sticky:hover .close-x,.close-x:hover{
+	color:#F00;
+	border-color:#AAA
+}
+
+#footer{
+	width:100%;
+	background:#fbfbfb;
+	border-top:1px solid #c7c7c7;
+	padding:0 0 25px 0;
+	font-family:tahoma,verdana,arial;
+	font-size:11px;
+	line-height:16px;
+	box-shadow:inset 0 4px 7px rgba(0,0,0,.1)
+}
+
+#footer ul.subnav{
+	margin-top:40px
+}
+
+#footer ul.subnav li{
+	float:left;
+	width:20%;
+	margin-bottom:30px
+}
+
+#footer ul.subnav li ul li{
+	clear:both;
+	width:100%;
+	margin-bottom:0
+}
+
+#footer .clr{
+	margin-bottom:25px
+}
+
+#footer .footend{
+	margin-bottom:50px!important;
+	padding-bottom:20px
+}
+
+#footer .footend strong{
+	float:left;
+	padding-right:12px
+}
+
+#footer .footend ul li{
+	float:left;
+	padding:0 10px;
+	margin-left:-1px;
+	border:1px solid #DDD;
+	border-width:0 1px
+}
+
+#footer #footerdate{
+	float:right
+}
+
+#footer a:hover,#content a:hover{
+	border-bottom:1px dotted #9ddfff
+}
+
+#footer a:hover{
+	border-color:#AAA
+}
+
+.close{
+	float:right;
+	font-size:20px;
+	font-weight:bold;
+	line-height:18px;
+	color:#000;
+	text-shadow:0 1px 0 #fff;
+	opacity:.2;
+	filter:alpha(opacity=20)
+}
+
+.close:hover{
+	color:#000;
+	text-decoration:none;
+	cursor:pointer;
+	opacity:.4;
+	filter:alpha(opacity=40)
+}
+
+button.close{
+	padding:0;
+	cursor:pointer;
+	background:transparent;
+	border:0;
+	-webkit-appearance:none
+}
+
+.note .close{
+	position:relative;
+	top:-2px;
+	right:-21px;
+	line-height:18px
+}
+
+.note{
+	padding:12px 18px 12px 18px;
+	margin-bottom:18px;
+	text-shadow:0 1px 0 rgba(255,255,255,0.5);
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #fff
+}
+
+.note-warning{
+	background-color:#fcf8e3;
+	border-color:#eecd6a;
+	color:#c09853
+}
+
+.note-success{
+	background-color:#EFE;
+	border-color:#d6e9c6;
+	color:#468847
+}
+
+.note-alert{
+	background-color:#FEE;
+	border-color:#eed3d7;
+	color:#b94a48
+}
+
+.note-info{
+	background-color:#dff1f5;
+	color:#3a87ad
+}
+
+#nojs{
+	margin:0 auto;
+	color:#222;
+	width:100%;
+	position:fixed;
+	bottom:0;
+	z-index:200;
+	font-size:1.1em;
+	border:0;
+	border-top:1px solid #d65a5a;
+	background:#cd3636;
+	color:#FFF;
+	text-shadow:1px 1px 2px rgba(0,0,0,.5)
+}
+
+.catnav{
+	position:absolute;
+	background:#FFF;
+	z-index:100;
+	top:118px;
+	min-width:150px;
+	min-height:100px;
+	border:0 solid #CCC;
+	box-shadow:0 8px 15px rgba(0,0,0,.5);
+	color:#444;
+	font-size:12px;
+	border:1px solid #EEE
+}
+
+.catnav a{
+	color:#333
+}
+
+.catnav.category{
+	margin-left:651px
+}
+
+.catnav.location{
+	margin-left:466px
+}
+
+.catnav ul li{
+	padding:4px 20px 4px 20px;
+	border:1px solid #FFF;
+	border-width:1px 0;
+	height:auto
+}
+
+.catnav ul li:hover{
+	color:#1c60a7;
+	font-weight:bold;
+	font-size:13px;
+	padding-bottom:4px
+}
+
+.catlev01,.catlev02,.catlev03{
+	width:235px;
+	height:300px;
+	overflow:auto;
+	padding:15px 0;
+	border-top:4px solid #2d7dce;
+	float:right;
+	background:#FFF
+}
+
+.catlev02,.catlev03{
+	display:none;
+	border-top:4px solid #adcceb;
+	position:absolute;
+	top:0;
+	margin-left:-256px;
+	box-shadow:0 8px 15px rgba(0,0,0,.5);
+	color:#333;
+	font-weight:normal;
+	background:#f9f9f9;
+	z-index:98
+}
+
+.catlev03{
+	position:fixed;
+	top:118px
+}
+
+.catlev01 ul li:hover .catlev02{
+	display:block
+}
+
+.catlev01 ul li:hover .catlev-arrow{
+	width:25px;
+	height:40px;
+	background-position:-254px -178px;
+	margin-left:-26px
+}
+
+.catlev02 ul li:hover .catlev03{
+	display:block
+}
+
+.catlev02 ul li:hover .catlev-arrow{
+	width:25px;
+	height:40px;
+	background-position:-254px -178px!important;
+	margin-left:-26px
+}
+
+.catlev02 ul li{
+	border-color:#f8f8f8
+}
+
+.catlev02 ul li:hover{
+	padding-bottom:4px
+}
+
+.all-cat{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -80px -93px no-repeat!important;
+	width:16px;
+	height:16px;
+	float:left;
+	margin-right:0;
+	margin-left:-20px
+}
+
+.catlev01 ul li.group-label,.catlev01 ul li.group-label:hover{
+	background:#939393;
+	color:#FFF;
+	cursor:default!important;
+	font-size:12px
+}
+
+.catnav ul li.lok-lv2{
+	padding:4px 10px 4px 30px;
+	border:1px solid #FFF;
+	border-width:1px 0;
+	height:auto
+}
+
+.catlev01 ul li.with-arrow:before{
+	content:"";
+	float:left;
+	margin-right:5px;
+	height:15px;
+	width:20px;
+	display:block;
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) -20px -130px no-repeat
+}
+
+.catlev01 ul li.with-arrow:hover:before{
+	background-position:-40px -130px
+}
+
+.catlev01 ul li:hover{
+	background:#1b70ca;
+	color:#FFF;
+	font-weight:normal;
+	font-size:12px
+}
+
+.catlev01 ul li:hover a{
+	color:#FFF
+}
+
+.popup-bg{
+	background:url(http://as.tokobagus.biz/v6/global/images/black70.png) 0 0 repeat;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:250;
+	width:100%;
+	height:100%;
+	margin:0!important;
+	padding:0;
+	display:none
+}
+
+.popup-bg .red{
+	color:#F00
+}
+
+.popup-bg .formBG{
+	padding:10px;
+	margin:2px 0
+}
+
+.popup-bg .label{
+	width:80px;
+	margin:5px 0 0 0;
+	vertical-align:top;
+	*zoom:1;
+	text-align:left
+}
+
+.popup-bg label{
+	font-weight:bold;
+	text-align:left;
+	margin-bottom:5px!important
+}
+
+.popuptitle{
+	font-size:16px
+}
+
+.popup-bg input[type="text"],.popup-bg input[type="password"]{
+	width:235px;
+	padding:5px;
+	margin-right:10px;
+	border:3px solid #f3f3f3;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.5);
+	border-radius:4px
+}
+
+.popup-bg textarea{
+	border:3px solid #f3f3f3;
+	box-shadow:inset 0 0 2px rgba(0,0,0,.5);
+	border-radius:4px;
+	width:240px
+}
+
+.popup-bg input[type="submit"],.popup-bg input[type="reset"]{
+	margin-right:10px;
+	padding:8px 14px!important
+}
+
+.popup-box{
+	background:#fff;
+	width:390px;
+	margin:0 auto;
+	margin-top:160px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-box-shadow:0 3px 5px rgba(50,50,50,0.8);
+	-moz-box-shadow:0 3px 5px rgba(50,50,50,0.8);
+	box-shadow:0 3px 5px rgba(50,50,50,0.8)
+}
+
+.hubungi .popup-box{
+	width:680px
+}
+
+.popup-head,.popup-foot{
+	background:#eee;
+	padding:10px;
+	font-weight:bold;
+	font-size:12px
+}
+
+.popup-head{
+	border-bottom:1px solid #ccc;
+	border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	-moz-border-radius:5px 5px 0 0
+}
+
+.popup-con{
+	padding:10px;
+	text-align:center
+}
+
+.popup-foot{
+	border-top:1px solid #ccc;
+	text-align:right;
+	border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	-moz-border-radius:0 0 5px 5px
+}
+
+.pop-close{
+	background:url(http://as.tokobagus.biz/v6/global/images/close.jpg) 0 0 no-repeat;
+	display:block;
+	width:20px;
+	height:20px;
+	float:right;
+	margin:-2px -5px 0 0
+}
+
+.ac_results{
+	background:#fff;
+	border:1px solid #ccc;
+	z-index:999!important;
+	position:absolute
+}
+
+.ac_results li{
+	font-size:13px;
+	padding:5px
+}
+
+.ac_results li:hover,.ac_over{
+	background:#6fb4fc;
+	cursor:pointer
+}
+
+.nextads,.prevads{
+	background:url(http://as.tokobagus.biz/v6/global/images/sprite.1.0.5.png) right -376px;
+	font-size:11px;
+	padding:5px 15px 8px 10px;
+	border-radius:4px 0 0 4px;
+	margin-top:-5px;
+	height:11px
+}
+
+.prevads{
+	background-position:-738px -376px;
+	border-radius:0 4px 4px 0;
+	padding:5px 9px 8px 17px;
+	margin-right:10px
+}
+
+a.nextads:hover,a.prevads:hover{
+	border:0!important
+}
+
+.capt-inner{
+	background:#fff;
+	float:left;
+	border-radius:5px 0 0 5px;
+	-moz-border-radius:5px 0 0 5px;
+	-webkit-border-radius:5px 0 0 5px;
+	height:40px;
+	padding:0 10px;
+	border:1px solid #ccc
+}
+
+.capt-refresh{
+	float:left;
+	border:1px solid #ccc;
+	border-radius:0 5px 5px 0;
+	border-left:none
+}
+
+a.refresh-btn{
+	background:url(http://as.tokobagus.biz/v6/global/images/captcha.png) -1361px -2px no-repeat;
+	width:40px;
+	height:40px;
+	display:block;
+	text-indent:9999px
+}
+
+.clear{
+	clear:both
+}
+
+[class^="cap-"],[class*=" icon-"]{
+	display:inline-block;
+	width:25px;
+	height:40px;
+	line-height:40px;
+	vertical-align:text-top;
+	background-image:url(http://as.tokobagus.biz/v6/global/images/captcha.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+	*margin-right:.3em;
+	text-indent:9999px;
+	float:left;
+	overflow:hidden
+}
+
+[class^="cap-"]:last-child,[class*=" icon-"]:last-child{
+	*margin-left:0
+}
+
+.cap-97{
+	background-position:-5px -2px
+}
+
+.cap-98{
+	background-position:-40px -2px
+}
+
+.cap-99{
+	background-position:-78px -2px
+}
+
+.cap-100{
+	background-position:-116px -2px
+}
+
+.cap-101{
+	background-position:-152px -2px
+}
+
+.cap-102{
+	background-position:-187px -2px
+}
+
+.cap-103{
+	background-position:-221px -2px
+}
+
+.cap-104{
+	background-position:-259px -2px
+}
+
+.cap-105{
+	background-position:-292px -2px
+}
+
+.cap-106{
+	background-position:-318px -2px
+}
+
+.cap-107{
+	background-position:-351px -2px
+}
+
+.cap-108{
+	background-position:-384px -2px
+}
+
+.cap-109{
+	background-position:-414px -2px;
+	width:40px
+}
+
+.cap-110{
+	background-position:-468px -2px
+}
+
+.cap-111{
+	background-position:-507px -2px
+}
+
+.cap-112{
+	background-position:-545px -2px
+}
+
+.cap-113{
+	background-position:-584px -2px
+}
+
+.cap-114{
+	background-position:-621px -2px
+}
+
+.cap-115{
+	background-position:-656px -2px
+}
+
+.cap-116{
+	background-position:-687px -2px
+}
+
+.cap-117{
+	background-position:-725px -2px
+}
+
+.cap-118{
+	background-position:-765px -2px
+}
+
+.cap-119{
+	background-position:-798px -2px;
+	width:40px
+}
+
+.cap-120{
+	background-position:-848px -2px
+}
+
+.cap-121{
+	background-position:-884px -2px
+}
+
+.cap-122{
+	background-position:-920px -2px
+}
+
+.cap-48{
+	background-position:-959px -2px
+}
+
+.cap-49{
+	background-position:-996px -2px
+}
+
+.cap-50{
+	background-position:-1034px -2px
+}
+
+.cap-51{
+	background-position:-1071px -2px
+}
+
+.cap-52{
+	background-position:-1112px -2px
+}
+
+.cap-53{
+	background-position:-1150px -2px
+}
+
+.cap-54{
+	background-position:-1189px -2px
+}
+
+.cap-55{
+	background-position:-1229px -2px
+}
+
+.cap-56{
+	background-position:-1267px -2px
+}
+
+.cap-57{
+	background-position:-1307px -2px
+}
+
+.center{
+	text-align:center
+}
+
+.borleft{
+	border-left:1px solid #DDD
+}
+
+.borright{
+	border-right:1px solid #DDD
+}
+
+.borbold{
+	border:2px solid #DDD!important
+}
+
+.blue{
+	color:#1c60a7
+}
+
+.bold{
+	font-weight:bold
+}

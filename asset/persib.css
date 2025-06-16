@@ -1,0 +1,290 @@
+a {
+    color: #001ed6 !important;
+}
+
+a:hover, a:active {
+    /*color: #ed1c24;*/
+    color: #001ed6 !important;
+    /*text-decoration: underline !important;*/
+}
+
+.link-gerai {
+    text-decoration: underline !important;
+}
+
+li.active a {
+    color: #001ed6;
+    font-weight: bold;
+    background: #fff;
+    border-right: 1px solid #e9e9e9;
+}
+
+.panel {
+    background: #ebf3f9;
+}
+
+.panel-default  {
+    background: #ebf3f9;
+}
+
+.panel-heading {
+    background: #ebf3f9;
+}
+
+.login-white-header {
+    color: #001ed6;
+    padding: 10px;
+}
+
+.login-white-header:hover {
+    color: #001ed6 !important;
+    /*padding: 10px;*/
+    text-decoration: underline !important;
+}
+
+.menu-member-area {
+    background-color: #B2D6F6;
+}
+
+.btn-cipika {
+    color: #ffffff;
+    background-color: #001ed6;
+    border-color: #001ed6;
+}
+
+.btn-cipika:hover, .btn-cipika:active {
+    background: #0B49F2;
+}
+
+.btn-lanjut {
+    background: #001ED6;
+    color: #fff !important;
+}
+
+.btn-lanjut:hover {
+    background: #0B49F2;
+}
+
+.breadcrumb .active {
+    color: #001ed6;
+}
+
+.product-item:hover {
+    border: 1px solid #001ed6;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.shopping-item {
+    background-color: #001ed6;
+    display: inline-block;
+    border-radius: 0;
+    color: #fff;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.shopping-item:hover, .shopping-item:active {
+    background: #fff !important;
+    color: #001ed6 !important;
+    border: 1px solid #0b49f2 !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6); /*#ffb127*/
+}
+
+.btn-buy {
+    background: #001ed6;
+    color: #fff;
+}
+
+.btn-buy:hover, .btn-buy:active {
+    background: #0b49f2;
+}
+
+.navbar-secondary {
+    border-bottom: 1px solid #001ed6;
+    background-color: #001ed6;
+    box-shadow: 0 1px 5px -1px rgba(0,0,0,0.33);
+}
+
+.kembali-belanja {
+    color: #001ed6;
+}
+
+.kembali-belanja:hover {
+    color: #2bbcff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #001ed6;
+    border-color: #001ed6;
+}
+
+/*.btn-default {
+    color: #fff;
+    background-color: #2bbcff;
+    border-color: #2bbcff;
+}*/
+
+footer#foot {
+    display: none !important;
+}
+
+#persib-container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-image: url("PERSIB_JUARA.jpg");
+    /*background-position: center;*/
+    background-attachment: fixed;
+    /*background-repeat: no-repeat;*/
+}
+
+.bg-img {
+    top: 0;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.top-menu {
+    position: relative;
+    margin: auto;
+    /*top: 25%;*/
+    /*left: 7%;*/
+}
+
+.top-title {
+    color: #fff;
+    text-shadow: 3px 3px rgb(33,64,153);
+    margin-bottom: 0px;
+}
+
+.img-grayscale {
+    -webkit-filter: grayscale(15%);
+    filter: grayscale(15%);
+}
+
+.img-opaque {
+    -webkit-filter: opacity(60%);
+    filter: opacity(60%);
+}
+
+.btn-daftar {
+    background-color: #fff;
+    /*background-color: #0b49f2;*/
+    color: #fff;
+    border-radius: 0;
+    width: 250px;
+    border: 2px solid rgb(255,255,255);
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+ .btn-daftar:hover {
+    /*background-color: rgb(33,64,153);*/
+    color: #fff;
+    /*color: rgb(33,64,153);*/
+    border: 2px solid rgb(33,64,153);
+
+    /*outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);*/
+ }
+
+ .btn-login-gerai {
+    /*background-color: #fff;*/
+    background-color: #001ed6;
+    /*background-color: #0b49f2;*/
+    color: #fff;
+    border-radius: 0;
+    width: 250px;
+    border: 2px solid rgb(0,30,214);
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+.btn-login-gerai:hover {
+    /*background-color: rgb(33,64,153);*/
+    color: #fff;
+    /*color: rgb(33,64,153);*/
+    border: 2px solid rgb(33,64,153);
+
+    /*outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);*/
+ }
+
+.term-div {
+    background-color: rgb(34,34,34);
+}
+
+.term-text {
+    padding-top: 5px;
+    color: #fff;
+}
+
+.aboutbox-item, .btn-primary {
+    border-radius: 0;
+    /*background: url(persib/lady_viking.jpg) right bottom no-repeat;
+    background-size: 10% !important;*/
+}
+
+.form_persib {
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+.form_persib:focus, .form-control:focus {
+  border-color: #b2d6f6;
+  outline: 0;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 177, 39, 0.6);*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 30, 214, 0.6); /*#ffb127*/
+}
+
+.alert {
+    border-radius: 0;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.troli-item {
+    border-radius: 0;
+}
+
+.centered {
+    /* Parent element must be relative; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gerai-reg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+.gerai-panel {
+    opacity:.95;
+}
+
+.btn-gerai {
+    border-radius: 0px;
+}

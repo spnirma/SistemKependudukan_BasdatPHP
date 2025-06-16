@@ -1,0 +1,131 @@
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+class Lib_mailer
+{
+    /* Save mailer */
+    function save($data)
+    {
+        $CI =& get_instance();        
+        $insert = array('idmailer'          => null,
+                        'mailer_module'     => (isset($data['module']))?$data['module']:'',
+                        'mailer_from'       => (isset($data['from']))?$data['from']:'',
+                        'mailer_to'         => (isset($data['to']))?$data['to']:'',
+                        'mailer_cc'         => (isset($data['cc']))?$data['cc']:'',
+                        'mailer_bcc'        => (isset($data['bcc']))?$data['bcc']:'',
+                        'mailer_subject'    => (isset($data['subject']))?$data['subject']:'',
+                        'mailer_message'    => (isset($data['message']))?$data['message']:'',
+                        'mailer_attach'     => (isset($data['attach']))?$data['attach']:'',
+                        'mailer_priority'   => (isset($data['priority']))?$data['priority']:0,
+                        'mailer_status'     => 'new',
+                        'mailer_created'    => (isset($data['created']))?$data['created']:date('Y-m-d H:i:s')
+                        );
+        $CI->db->insert('mailer',$insert); 
+        return $CI->db->insert_id();
+    }
+    
+    function update($id, $data)
+    {
+        $CI =& get_instance();  
+        $CI->db->where('idmailer', $id);
+        $CI->db->update('mailer', $data);
+        return $CI->db->affected_rows();
+    }
+    
+    /* Get all new email */ 
+    function get_emails($limit=5)
+    {
+        $CI =& get_instance();  
+        $sql = "select * from mailer where mailer_status<>'sent' order by mailer_created asc limit 0,$limit";
+        
+        $query = $CI->db->query($sql);
+        if($query->num_rows() > 0){
+			return $query->result(); 
+		}
+    }
+    
+    /* Get single email */
+    function get_single_email($idmailer)
+    {
+        $CI =& get_instance();  
+        $sql = "select * from mailer where idmailer=".$idmailer." limit 0,1";
+        
+        $query = $CI->db->query($sql);
+        if($query->num_rows() > 0){
+			return $query->row(); 
+		}
+    }
+    
+    /* Send single email */
+	function send_mail($idmailer='')
+	{
+        $CI =& get_instance(); 
+        if($idmailer!=''){            
+            $row = $this->get_single_email($idmailer);
+            if(!empty($row)){
+                $config = $CI->_mail_win();
+                $CI->load->library('email', $config);                
+                
+                $CI->email->set_newline("\r\n");
+                $CI->email->from($row->mailer_from, 'Cipika Store');
+                $CI->email->to($row->mailer_to);                
+                $CI->email->subject($row->mailer_subject);
+                $CI->email->message($row->mailer_message);
+                $send = $CI->email->send();
+
+                $status = (!$CI->email->send())?'not sent':'sent';
+                $this->update($row->idmailer,array('mailer_status' => $status,'mailer_sent' => date('Y-m-d H:i:s')));
+            }
+        }
+	}
+
+	function send_mail_persib($idmailer='')
+	{
+        $CI =& get_instance(); 
+        if($idmailer!=''){            
+            $row = $this->get_single_email($idmailer);
+            if(!empty($row)){
+                $config = $CI->_mail_win();
+                $CI->load->library('email', $config);                
+                
+                $CI->email->set_newline("\r\n");
+                $CI->email->from($row->mailer_from, 'PERSIB');
+                $CI->email->to($row->mailer_to);                
+                $CI->email->subject($row->mailer_subject);
+                $CI->email->message($row->mailer_message);
+                $send = $CI->email->send();
+
+                $status = (!$CI->email->send())?'not sent':'sent';
+                $this->update($row->idmailer,array('mailer_status' => $status,'mailer_sent' => date('Y-m-d H:i:s')));
+            }
+        }
+	}    
+    function _mail_win()
+    {
+        $config = Array(
+            'protocol'      => $this->config->item('protocol'),
+            'smtp_host'     => $this->config->item('smtp_host'),
+            'smtp_port'     => $this->config->item('smtp_port'),
+            'smtp_user'     => $this->config->item('smtp_user'),
+            'smtp_pass'     => $this->config->item('smtp_pass'),
+            'mailtype'      => $this->config->item('mailtype'),
+            'charset'       => $this->config->item('charset'),
+            'smtp_crypto'   => $this->config->item('smtp_crypto'),
+            'bcc_batch_mode'   => true,
+            'bcc_batch_size'   => 5            
+        );
+        return $config;
+    }
+
+    function _mail_unix()
+    {
+        $config = array(
+            'mailtype'  => $this->config->item('mailtype'),
+            'charset'   => $this->config->item('charset'),
+            'bcc_batch_mode'   => true,
+            'bcc_batch_size'   => 5            
+        );
+        return $config;
+    }
+    
+    
+}

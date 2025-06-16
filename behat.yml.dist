@@ -1,0 +1,21 @@
+default:
+    suites:
+        frontend:
+            contexts:
+                - FeatureContext
+                - Cipika\Component\Behat\Context\ScreenshotContext
+            filters:
+                tags: "@frontend && ~@small_screen"
+        frontend_small_screen:
+            contexts:
+                - FeatureContext
+                - Cipika\Component\Behat\Context\ScreenshotContext
+            filters:
+                tags: "@frontend && @small_screen"
+    extensions:
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            base_url: http://localhost/cipika
+#           selenium2: ~
+            selenium2:
+                wd_host: "http://localhost:8643/wd/hub"
+            browser_name: firefox
